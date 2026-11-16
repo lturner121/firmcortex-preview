@@ -1630,32 +1630,75 @@ h2 .soft { color:inherit; }
 </script>
 
 <script>
-/* Round 7 draft: sizes the hero picture to the room it has, then places the band names and the three threads. */
 (function () {
-  var R = document.getElementById('heroR'), sc = document.getElementById('scene2'), ov = document.getElementById('ov2');
-  function at(el) { var r = el.getBoundingClientRect(), b = sc.getBoundingClientRect(); return [r.left - b.left, r.top - b.top]; }
-  function go() {
-    var w = document.documentElement.clientWidth, k;
-    if (w <= 700) k = 0.45; else { R.style.setProperty('--k', 1); k = Math.max(0.72, Math.min(1, (w - R.getBoundingClientRect().left) / 740)); }
-    R.style.setProperty('--k', k);
-    var b = sc.getBoundingClientRect(), h = '';
-    [].forEach.call(sc.querySelectorAll('.mk[data-label]'), function (m) { var p = at(m), l = document.getElementById(m.getAttribute('data-label')); l.style.left = p[0] + 'px'; l.style.top = p[1] + 'px'; });
-    [].forEach.call(sc.querySelectorAll('.mk[data-card]'), function (m) {
-      var p = at(m), c = document.getElementById(m.getAttribute('data-card')).getBoundingClientRect(), col = m.getAttribute('data-col');
-      var x = c.right - b.left, y = c.top - b.top + c.height / 2;
-      h += '<g class="th" data-i="' + m.getAttribute('data-card') + '"><path pathLength="1" stroke-dasharray="1" d="M' + p[0] + ' ' + p[1] + ' C' + (p[0] - 46 * k) + ' ' + p[1] + ' ' + (x + 46 * k) + ' ' + y + ' ' + x + ' ' + y + '" stroke="' + col + '" stroke-opacity=".9" stroke-width="2" fill="none"/>';
-      h += '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="4.5" fill="' + col + '"/><circle cx="' + x + '" cy="' + y + '" r="4" class="end" fill="' + col + '" stroke="#fff" stroke-width="1.5"/></g>';
-    });
-    ov.innerHTML = h; if (window.__beatSync) window.__beatSync();
+  var R = document.getElementById('heroR'), sc = document.getElementById('scene2'), ov = document.getElementById('ov2'), few = document.getElementById('few');
+  var frame = 0, k = 1, visible = true, ns = 'http://www.w3.org/2000/svg';
+  var labels = [], threads = [];
+  function svgNode(tag, attributes, parent) {
+    var el = document.createElementNS(ns, tag);
+    Object.keys(attributes).forEach(function (name) { el.setAttribute(name, attributes[name]); });
+    parent.appendChild(el); return el;
   }
-  go();
-  window.addEventListener('load', function () { go(); setTimeout(go, 400); setTimeout(go, 1500); setTimeout(go, 2400); });
-  window.addEventListener('resize', go);
-  /* The cards fly in on load. If that is delayed (a busy machine, or a tab opened in the background) the timed
-     measurements above catch them mid-flight, so measure again when each card lands and when the tab is shown. */
-  document.getElementById('few').addEventListener('animationend', go);
-  document.addEventListener('visibilitychange', function () { if (!document.hidden) { go(); setTimeout(go, 1800); } });
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(go);
+  sc.querySelectorAll('.mk[data-label]').forEach(function (m) {
+    labels.push({ marker: m, label: document.getElementById(m.getAttribute('data-label')), x: 0, y: 0 });
+  });
+  sc.querySelectorAll('.mk[data-card]').forEach(function (m) {
+    var col = m.getAttribute('data-col'), id = m.getAttribute('data-card');
+    var g = svgNode('g', { 'class': 'th', 'data-i': id }, ov);
+    threads.push({
+      marker: m, card: document.getElementById(id),
+      path: svgNode('path', { pathLength: '1', 'stroke-dasharray': '1', stroke: col, 'stroke-opacity': '.9', 'stroke-width': '2', fill: 'none' }, g),
+      start: svgNode('circle', { r: '4.5', fill: col }, g),
+      end: svgNode('circle', { r: '4', 'class': 'end', fill: col, stroke: '#fff', 'stroke-width': '1.5' }, g),
+      x1: 0, y1: 0, x2: 0, y2: 0, previous: ''
+    });
+  });
+  function tick() {
+    frame = 0;
+    if (document.hidden || !visible || document.documentElement.clientWidth <= 700) return;
+    var b = ov.getBoundingClientRect(), s = sc.getBoundingClientRect(), j, item, m, c;
+    for (j = 0; j < labels.length; j++) {
+      item = labels[j]; m = item.marker.getBoundingClientRect();
+      item.x = m.left - s.left; item.y = m.top - s.top;
+    }
+    for (j = 0; j < threads.length; j++) {
+      item = threads[j]; m = item.marker.getBoundingClientRect(); c = item.card.getBoundingClientRect();
+      item.x1 = m.left - b.left; item.y1 = m.top - b.top;
+      item.x2 = c.right - b.left; item.y2 = c.top + c.height / 2 - b.top;
+    }
+    var animations = few.getAnimations({ subtree: true }), moving = false;
+    for (j = 0; j < animations.length; j++) {
+      if (animations[j].playState === 'running' || animations[j].pending) { moving = true; break; }
+    }
+    for (j = 0; j < labels.length; j++) {
+      item = labels[j]; item.label.style.left = item.x + 'px'; item.label.style.top = item.y + 'px';
+    }
+    for (j = 0; j < threads.length; j++) {
+      item = threads[j];
+      var d = 'M' + item.x1 + ' ' + item.y1 + ' C' + (item.x1 - 46 * k) + ' ' + item.y1 + ' ' + (item.x2 + 46 * k) + ' ' + item.y2 + ' ' + item.x2 + ' ' + item.y2;
+      if (d === item.previous) continue;
+      item.previous = d; item.path.setAttribute('d', d);
+      item.start.setAttribute('cx', item.x1); item.start.setAttribute('cy', item.y1);
+      item.end.setAttribute('cx', item.x2); item.end.setAttribute('cy', item.y2);
+    }
+    if (moving) schedule();
+  }
+  function schedule() { if (!frame) frame = requestAnimationFrame(tick); }
+  function fit() {
+    var w = document.documentElement.clientWidth;
+    k = w <= 700 ? 0.45 : Math.max(0.72, Math.min(1, (w - R.getBoundingClientRect().left) / 740));
+    R.style.setProperty('--k', k); schedule();
+  }
+  ['animationstart', 'animationend', 'animationcancel', 'transitionrun', 'transitionend', 'transitioncancel'].forEach(function (event) { few.addEventListener(event, schedule); });
+  window.addEventListener('resize', fit);
+  window.addEventListener('load', fit);
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) fit(); });
+  if (window.ResizeObserver) { var resize = new ResizeObserver(fit); resize.observe(R); resize.observe(few); }
+  if (window.IntersectionObserver) new IntersectionObserver(function (entries) {
+    visible = entries[entries.length - 1].isIntersecting; if (visible) fit();
+  }).observe(R);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  fit();
 })();
 </script>
 <script>
@@ -1701,7 +1744,6 @@ h2 .soft { color:inherit; }
     if (hovered || focused) { hold(); return; }
     if (canRun()) t = setTimeout(next, 1600);
   }
-  window.__beatSync = function () { if (cur) apply(cur); };
   [].forEach.call(R.querySelectorAll('.card'), function (c) {
     c.addEventListener('mouseenter', function () { hovered = c; hold(); });
     c.addEventListener('mouseleave', function () { if (hovered === c) hovered = null; release(); });
