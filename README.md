@@ -1,6 +1,7 @@
 # FirmCortex design preview
 
-The approved static FirmCortex website preview, hosted on GitHub Pages.
+The single approved FirmCortex website preview, hosted on GitHub Pages.
+Approved copy updated 16 November 2026 for desktop and mobile.
 
 - Preview: https://lturner121.github.io/firmcortex-preview/
 - All displayed companies and figures are invented.
