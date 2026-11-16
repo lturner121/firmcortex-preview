@@ -1,0 +1,98 @@
+/* Product evidence type scale. Source images remain unchanged.
+   Cap enlarged 2x exports; give the denser source feed room to stay legible.
+   Keep reading text, metadata, card titles and standalone KPIs distinct. */
+:root {
+  --product-body:18px;
+  --product-label:14px;
+  --product-title:20px;
+  --product-figure:28px;
+}
+
+#platform .k2f {max-width:1076px;margin-inline:auto}
+#sourcing .q4wide {max-width:1033px;margin-inline:auto}
+#value-creation .vc-stage {max-width:1036px;margin-inline:auto}
+#value-creation .vc-cropbox {max-width:620px}
+#verification .src2 {padding:0;grid-template-columns:minmax(0,648fr) minmax(0,504fr);gap:48px}
+#verification .chg9 {max-width:none}
+#verification .src9 {align-self:start;margin-top:100px}
+#verification .link9 {left:calc(56.25% - 27px);top:166px;width:48px}
+
+/* The HTML evidence uses the same readable scale as the 2x image exports. */
+#evaluation .memo5 {padding:24px}
+#evaluation .memo5 .mt b {font-size:var(--product-title);line-height:1.3}
+#evaluation .memo5 p,
+#evaluation .memo5 p.mh {font-size:var(--product-body);line-height:1.45}
+#evaluation .memo5 .mt span,
+#evaluation .list5 .lh span,
+#evaluation .list5 li em {font-size:var(--product-label);line-height:1.4}
+#evaluation .list5 .lhh,
+#evaluation .list5 .lh b,
+#evaluation .list5 li {font-size:var(--product-body);line-height:1.4}
+#evaluation .list5 li {min-height:48px}
+#evaluation .list5 li em {flex-shrink:0}
+
+#monitoring .priority-flags li>span {font-size:var(--product-label);line-height:1.4}
+#monitoring .priority-flags em {font-size:var(--product-body);line-height:1.45}
+
+/* Crop scaling, not retyped artwork: all five original KPI figures share a
+   fixed scale, independently of the card width and the label lengths. */
+.corvel-pixels {--pixel:calc(var(--product-figure) / 50)}
+.corvel-metric>.corvel-pixels:first-child {--pixel:calc(var(--product-label) / 32)}
+.corvel-metric>.corvel-pixels:nth-child(2) {width:calc(224 * var(--pixel))}
+.corvel-header-desktop {height:min(64px,6.84cqw);aspect-ratio:auto}
+.corvel-header-desktop img {width:min(100%,930px)}
+.corvel-header-mobile {height:min(83px,24.56cqw);aspect-ratio:auto}
+.corvel-header-mobile img {width:min(100%,338px)}
+.corvel-header img {clip-path:inset(2px 2px 0 2px)}
+
+#value-creation .vc-simple .vc-r7 b,
+#value-creation .vc-r7.vc-phonecard b,
+#value-creation .vc-lcard b {font-size:var(--product-body);line-height:1.45;letter-spacing:normal}
+#value-creation .vc-tag2,
+#value-creation .vc-simple .vc-tag2,
+#value-creation .vc-from>.vc-tag2,
+#value-creation .vc-lcard>span,
+#value-creation .vc-cap,
+#value-creation .vc-later {font-size:var(--product-label);line-height:1.4}
+#value-creation .vc-r7.vc-phonecard p {font-size:var(--product-body);line-height:1.45}
+
+#verification .lab9 {font-size:var(--product-label);line-height:1.4}
+#verification .fig9 b {font-size:var(--product-figure);line-height:1.2;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+#verification .row9 {font-size:var(--product-body);line-height:1.45}
+
+@media(max-width:1199px) {
+  #verification .src2 {grid-template-columns:1fr;max-width:648px;gap:28px}
+  #verification .src9 {margin-top:0}
+}
+
+@media(max-width:760px) {
+  :root {--product-body:16px;--product-title:18px;--product-figure:24px}
+  #evaluation .memo5 {padding:20px}
+  #value-creation .vc-stage {max-width:none}
+  #verification .fig9 {padding:24px 20px 18px}
+  #verification .row9 {padding:16px 20px}
+}
+
+@media(max-width:700px) {
+  /* Keep the figure size stable as the viewport changes. Labels alone adapt
+     to the narrowest phones so the untouched Revenue growth crop still fits. */
+  :root {--product-label:clamp(12px,3.59vw,14px)}
+  .mobile-compare thead th,
+  .mobile-compare tbody th {font-size:var(--product-label);line-height:1.4}
+  .mobile-compare td {font-size:var(--product-figure);line-height:1.25;padding-right:4px}
+  #sourcing .q4reason {font-size:var(--product-body);line-height:1.5}
+  /* Preserve the original name and score pixels at one scale. Trim only
+     spare column whitespace instead of shrinking the type on narrow phones. */
+  #sourcing .q4pair {max-width:none;height:calc(var(--h) * .8px);aspect-ratio:auto;margin:0;clip-path:inset(1px 0 0)}
+  #sourcing .q4pair i:first-child {width:calc(100% - 48px);background-size:233.6px auto}
+  #sourcing .q4pair i+i {width:48px;background-size:96.8px auto;background-position:-16px var(--y)}
+  #sourcing .q4why>li:first-child .q4pair {height:87.2px}
+  #sourcing .q4why>li:first-child .q4pair i {background-position-y:-42.4px}
+  .corvel-mobile-percentile {--pixel:calc(var(--product-label) / 32)}
+  #monitoring .corvel-metric.attention {gap:10px}
+}
+
+@media(max-width:360px) {
+  :root {--product-figure:22px}
+  .mobile-compare td {font-size:var(--product-figure)}
+}

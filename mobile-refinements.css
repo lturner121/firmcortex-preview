@@ -1,0 +1,104 @@
+/* Mobile composition only. The approved desktop rules remain unchanged. */
+.mobile-compare { display:none; }
+
+@media (max-width:700px) {
+  /* One connected group, with all four stages and their existing copy visible. */
+  #hero .herocta { display:none; }
+  #hero .copy { padding-bottom:26px; }
+  #hero .heroR { width:100%; height:auto; margin:0 0 44px; }
+  #hero .scene2, #hero .ov2, #hero .bl2 { display:none; }
+  #hero .heroR .few { position:relative; left:auto; top:auto; width:100%; margin:0; transform:none; }
+  #hero .heroR .few h2 { margin:0 0 12px; padding-right:52px; }
+  #hero .heroR .few ol { position:relative; grid-auto-rows:auto; gap:0; padding:0 16px 0 28px; background:#fff; border:1px solid #e6dfe3; border-radius:16px; box-shadow:0 16px 40px #10060d35; }
+  #hero .heroR .few ol::before { content:''; position:absolute; left:15px; top:24px; bottom:24px; width:1px; background:#b6cee6; }
+  #hero .heroR .few .card:nth-child(n) { display:flex; flex-direction:column; align-items:stretch; gap:4px; min-height:0; margin:0; padding:14px 0 14px 8px; border:0; border-radius:0; background:transparent; box-shadow:none; transform:none; animation:none; }
+  #hero .heroR .few .card + .card { border-top:1px solid #e4e7ed; }
+  #hero .heroR .few .card .who { position:static; min-height:0; height:auto; margin:0; gap:2px 7px; font-size:12px; line-height:17px; color:#4b5563; }
+  #hero .heroR .few .card .who b { font-size:13px; color:#111827; }
+  #hero .heroR .few .card .who i { position:absolute; left:-17px; top:19px; width:8px; height:8px; border-radius:50%; box-shadow:0 0 0 4px #fff; }
+  #hero .heroR .few .card:nth-child(n) .why { align-self:stretch; font-size:16px; line-height:22px; margin:0; min-height:0; }
+  #hero .heroR .few .card .next { align-self:stretch; margin:0; font-size:12.5px; line-height:18px; color:#374151; }
+  #hero .heroR .few .card:hover { transform:none; box-shadow:none; }
+  #hero .heroR .few a.next:focus-visible::after { outline:2px solid #1870cb; outline-offset:4px; border-radius:6px; }
+
+  /* Same supplied comparison figures, readable without shrinking the desktop image. */
+  #platform .k2 { margin-top:28px; padding:26px 20px; }
+  #platform .k2wide { display:none!important; }
+  #platform .k2st { display:block; padding:0; border:0; }
+  #platform .k2st > p, #platform .k2st > dl { display:none; }
+  .mobile-compare { display:table; width:100%; border-collapse:collapse; table-layout:fixed; color:#fff; }
+  .mobile-compare thead th { padding:0 8px 12px 0; width:33.333%; text-align:left; vertical-align:top; font-size:12px; line-height:17px; font-weight:500; color:#e7dfe3; }
+  .mobile-compare thead th:last-child { padding-right:0; }
+  .mobile-compare tbody th { text-align:left; padding:12px 0 4px; border-top:1px solid #ffffff38; font-size:13px; line-height:18px; font-weight:500; color:#e7dfe3; }
+  .mobile-compare td { padding:0 8px 12px 0; font-size:25px; line-height:30px; font-weight:600; letter-spacing:-.02em; font-variant-numeric:tabular-nums; }
+  .mobile-compare tbody:last-child td { padding-bottom:0; }
+
+  /* Keep the original identity/score crop once; connect it directly to its explanation. */
+  #sourcing .q4narrow { max-width:none; }
+  #sourcing .q4why { gap:16px; }
+  #sourcing .q4why > li { gap:0; padding:0; overflow:hidden; background:#fff; border:1px solid #dde2ea; border-radius:12px; box-shadow:0 4px 16px #11182706; }
+  #sourcing .q4pair { max-width:none; border-radius:0; box-shadow:none; }
+  #sourcing .q4reason { padding:12px 16px 16px; font-size:15px; line-height:23px; }
+  #sourcing .q4reason > b { position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+  #sourcing .q4reason > span { margin-top:7px; color:#4b5563; }
+  #sourcing .tiles.cells { margin-top:24px; gap:0; }
+  #sourcing .cells .tile { padding:0; border-top:1px solid #d9dde5; }
+  #sourcing .cells .tile:last-child { border-bottom:1px solid #d9dde5; }
+  #sourcing .tile h3 { font-size:18px; line-height:25px; }
+  #sourcing .tile p { margin:0; padding:0 28px 18px 0; font-size:16px; line-height:25px; }
+  .mobile-capability > summary { position:relative; display:block; padding:17px 28px 17px 0; list-style:none; cursor:pointer; }
+  .mobile-capability > summary::-webkit-details-marker { display:none; }
+  .mobile-capability > summary::after { content:''; position:absolute; right:3px; top:24px; width:7px; height:7px; border-right:1.5px solid #3b1f2b; border-bottom:1.5px solid #3b1f2b; transform:rotate(45deg); }
+  .mobile-capability[open] > summary::after { top:27px; transform:rotate(225deg); }
+
+  /* Checklist stays available, while the memo carries the default view. */
+  #evaluation .dd5 { gap:14px; }
+  .mobile-checklist > summary { position:relative; display:block; list-style:none; cursor:pointer; }
+  .mobile-checklist > summary::-webkit-details-marker { display:none; }
+  .mobile-checklist > summary::after { content:''; position:absolute; right:19px; top:65px; width:8px; height:8px; border-right:1.5px solid #3b1f2b; border-bottom:1.5px solid #3b1f2b; transform:rotate(45deg); }
+  .mobile-checklist[open] > summary::after { top:69px; transform:rotate(225deg); }
+  #evaluation .list5 .lh { margin:12px 42px 14px 16px; }
+  #evaluation .memo5 { padding:20px; }
+  #evaluation .memo5 p.mh { margin-top:16px; }
+
+  /* Give the metric behind the recommendation a full row; no empty grid cell. */
+  #monitoring .stage6 { padding:28px 16px; }
+  #monitoring .corvel-card { width:calc(100% + 32px); max-width:none; margin-inline:-16px; --pixel:min(.52px,calc((100cqw - 34px) / 608)); }
+  #monitoring .corvel-grid { padding:0 12px; gap:16px 10px; }
+  #monitoring .corvel-metric.attention { grid-column:1/-1; order:-1; display:grid; grid-template-columns:auto auto minmax(0,1fr); align-items:center; gap:12px; padding:10px 4px; margin-bottom:6px; }
+  #monitoring .corvel-metric.attention .corvel-pixels:nth-child(2) { width:calc(120 * var(--pixel)); height:calc(64 * var(--pixel)); }
+  #monitoring .corvel-mobile-percentile { justify-self:end; }
+  #monitoring .corvel-metric.attention::after { inset:-4px; }
+
+  /* DOM order matches the visual and keyboard journey: introduction, form, reassurance. */
+  #contact { padding:48px 0 40px; scroll-margin-top:64px; }
+  #contact .words > .form { margin-top:24px; }
+  #contact .words > .trust { margin-top:32px; }
+  #contact .trust li { padding-top:18px; padding-bottom:18px; }
+
+  .mobile-motion-control { position:absolute; right:-4px; top:-6px; display:grid; place-items:center; width:44px; height:44px; padding:0; border:0; border-radius:50%; color:#fff; background:transparent; cursor:pointer; }
+  .mobile-motion-control svg { width:28px; height:28px; padding:7px; border:1px solid #ffffff52; border-radius:50%; fill:currentColor; }
+  .mobile-motion-control:active svg { background:#ffffff22; }
+  .mobile-motion-control[hidden] { display:none; }
+  #hero .heroR .few .card::before { content:none; }
+  #hero .heroR .few ol::after { content:''; position:absolute; left:15px; top:24px; bottom:24px; width:1px; background:#1870cb; opacity:0; transform:scaleY(0); transform-origin:top; pointer-events:none; }
+  #hero .heroR .few .card .who i { z-index:2; }
+  #hero .heroR .few .card .who i::after { content:''; position:absolute; inset:-4px; border:1px solid #1870cb; border-radius:50%; background:transparent; opacity:0; transform:scale(.75); pointer-events:none; }
+
+  @media (prefers-reduced-motion:no-preference) {
+    #hero .heroR .few.mobile-running .card .who i::after { transition:opacity .25s ease,transform .35s cubic-bezier(.22,1,.36,1); }
+    #hero .heroR .few.mobile-running .card.mobile-focus .who i::after { opacity:1; transform:scale(1); }
+    #hero .heroR .few.mobile-running ol::after { opacity:1; transform:scaleY(var(--mobile-progress,0)); transition:transform .55s cubic-bezier(.22,1,.36,1),opacity .25s ease; }
+    .mobile-capability > summary::after, .mobile-checklist > summary::after { transition:transform .2s ease; }
+    .mobile-capability[open] > p, .mobile-checklist[open] > ol { animation:mobile-detail-in .24s ease-out both; }
+    @keyframes mobile-detail-in { from { opacity:0; transform:translateY(-4px); } to { opacity:1; transform:none; } }
+  }
+}
+
+@media (max-width:360px) {
+  #hero .heroR .few ol { padding-right:13px; padding-left:25px; }
+  #hero .heroR .few ol::before { left:12px; }
+  #hero .heroR .few ol::after { left:12px; }
+  #hero .heroR .few .card .who { font-size:11.5px; }
+  .mobile-compare td { font-size:22px; }
+}
