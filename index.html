@@ -1250,6 +1250,7 @@ h2 .soft { color:inherit; }
 <link rel="stylesheet" href="section-refinements.css?v=6">
 <link rel="stylesheet" href="mobile-refinements.css?v=7">
 <link rel="stylesheet" href="product-typography.css?v=8.7">
+<link rel="stylesheet" href="investment-exhibits.css">
 </head>
 <body>
 <a class="skip" href="#hero-title">Skip to content</a>
@@ -1354,9 +1355,9 @@ h2 .soft { color:inherit; }
       <h2>Needs attention now</h2>
       <button type="button" class="pause m17p" id="m17p" aria-label="Pause the moving picture"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 0h3v10H1zM6 0h3v10H6z"/></svg></button>
       <ol>
-        <li class="card" id="card1" style="--sc:#6FAEF0" data-s="0"><span class="who"><i style="--c:var(--d0)"></i><b>Tarnwick Health</b> Sourcing</span><span class="why">Scores 91 of 100 against your criteria</span><a class="next" href="#sourcing">See why it fits, then approve it for outreach</a></li>
+        <li class="card" id="card1" style="--sc:#6FAEF0" data-s="0"><span class="who"><i style="--c:var(--d0)"></i><b>Tarnwick Health</b> Sourcing</span><span class="why">Scores 91 of 100 against your criteria</span><a class="next" href="#sourcing-queue" data-sourcing-link>See why Tarnwick scored 91</a></li>
         <li class="card" id="card2" style="--sc:#D9A9C2" data-s="1"><span class="who"><i style="--c:var(--d1)"></i><b>Halden Learning Systems</b> Prospect evaluation</span><span class="why">Red flag: $1.9M of FY26 EBITDA is one-time</span><a class="next" href="#evaluation">See the adjustments before you bid</a></li>
-        <li class="card" id="card0" style="--sc:#6FCB9B" data-s="2" data-t="3"><span class="who"><i style="--c:var(--d2)"></i><b>Corvel Learning</b> Portfolio monitoring</span><span class="why">$1.2M of ARR lost across 41 customers in FY26</span><a class="next" href="#monitoring">See which customers left, and why</a></li>
+        <li class="card" id="card0" style="--sc:#6FCB9B" data-s="2" data-t="3"><span class="who"><i style="--c:var(--d2)"></i><b>Corvel Learning</b> Portfolio monitoring</span><span class="why">$1.2M of ARR lost across 41 customers in FY26</span><a class="next" href="#corvel-retention">Compare Corvel’s retention with its peers</a></li>
         <li class="card" id="card3" style="--sc:#E2C27E" data-s="3"><span class="who"><i style="--c:var(--d3)"></i><b>Corvel Learning</b> Value creation</span><span class="why">A plan to improve net retention</span><a class="next" href="#value-creation">See the plan, ranked by what to act on first</a></li>
       </ol>
     </div>
@@ -1373,23 +1374,22 @@ h2 .soft { color:inherit; }
     <div class="k2">
       <div class="k2w">
         <h3 class="k2h">Compare a new deal with the companies you already own.</h3>
-        <p class="k2s">On the same measures, from your firm’s own data. FirmCortex can recommend add-ons based on your existing portfolio company data.</p>
+        <p class="k2s">On the same measures, from your firm’s own data.</p>
       </div>
       <figure class="k2f">
-        <div class="k2tags" aria-hidden="true"><span style="--r:43.6%">New deal</span><span style="--r:20.8%">Existing portfolio company</span><span style="--r:1.9%">Full portfolio</span></div>
-        <img class="crop k2wide" src="assets/asset-02.png" width="1076" height="416" alt="Part of the comparison view, with invented data: a new deal, Halden Learning Systems, beside a company the fund owns, Corvel Learning, and the median of the fund’s nine portfolio companies. Revenue $51.0M, $31.0M and $58.2M. ARR $46.8M, $28.6M and $41.5M. Revenue growth 18.5%, 14.2% and 13.6%. EBITDA $16.2M, $7.4M and $11.4M. EBITDA margin 31.8%, 23.9% and 19.6%.">
+        <div class="k2tags" aria-hidden="true"><span style="--r:43.6%">Marketed figures</span><span style="--r:20.8%">Portfolio actuals</span><span style="--r:1.9%">Nine holdings</span></div>
+        <img class="crop k2wide" src="assets/asset-02.png" width="1076" height="416" alt="Part of the comparison view, with invented data: Halden Learning Systems’ marketed FY26 figures, Corvel Learning’s FY26 actuals, and the portfolio median across nine holdings. Revenue $51.0M, $31.0M and $58.2M. ARR $46.8M, $28.6M and $41.5M. Revenue growth 18.5%, 14.2% and 13.6%. EBITDA $16.2M, $7.4M and $11.4M. EBITDA margin 31.8%, 23.9% and 19.6%.">
         <div class="k2st">
-          <table class="mobile-compare" aria-label="Comparison of revenue growth and EBITDA margin">
-            <thead><tr><th id="mc-halden" scope="col">Halden, the new deal</th><th id="mc-corvel" scope="col">Corvel, an existing portfolio company</th><th id="mc-portfolio" scope="col">Median of the full portfolio</th></tr></thead>
-            <tbody><tr><th id="mc-growth" scope="rowgroup" colspan="3">Revenue growth</th></tr><tr><td headers="mc-growth mc-halden">18.5%</td><td headers="mc-growth mc-corvel">14.2%</td><td headers="mc-growth mc-portfolio">13.6%</td></tr></tbody>
-            <tbody><tr><th id="mc-margin" scope="rowgroup" colspan="3">EBITDA margin</th></tr><tr><td headers="mc-margin mc-halden">31.8%</td><td headers="mc-margin mc-corvel">23.9%</td><td headers="mc-margin mc-portfolio">19.6%</td></tr></tbody>
+          <table class="company-comparison" aria-label="FY26 revenue growth and EBITDA margin">
+            <thead>
+              <tr><th scope="col">Company</th><th scope="col">Revenue growth</th><th scope="col">EBITDA margin</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Halden<span>Marketed figures</span></th><td>18.5%</td><td>31.8%</td></tr>
+              <tr><th scope="row">Corvel<span>Portfolio actuals</span></th><td>14.2%</td><td>23.9%</td></tr>
+              <tr><th scope="row">Portfolio median<span>Nine holdings</span></th><td>13.6%</td><td>19.6%</td></tr>
+            </tbody>
           </table>
-          <p>EBITDA margin</p>
-          <dl>
-            <div><dt>Halden, the new deal</dt><dd>31.8%</dd></div>
-            <div><dt>Corvel, an existing portfolio company</dt><dd>23.9%</dd></div>
-            <div><dt>Median of the full portfolio</dt><dd>19.6%</dd></div>
-          </dl>
         </div>
       </figure>
     </div>
@@ -1405,13 +1405,39 @@ h2 .soft { color:inherit; }
     <div class="panel q4">
 
       <p class="q4cap"><b>Your sourcing queue.</b> Each row gives what the company does, why it fits and the main concern, with a fit score out of 100.</p>
+      <div id="sourcing-queue" role="group" aria-label="Prospects ranked by fit score" tabindex="-1">
       <img class="crop q4wide" src="assets/asset-03.png" width="1033" height="565" alt="Part of the sourcing list, with invented data: the first three prospects by fit score. Keystone Compliance Training, 92: mandated yearly training makes renewals dependable; main concern, two hospital systems make up a large share of revenue. Tarnwick Health, 91: agencies use it every shift to meet state visit-verification rules, so customers stay through staff turnover; main concern, most customers are in three states. Meridian Physical Therapy, 88: a dense clinic footprint with room to add sites in neighboring counties; main concern, therapist hiring sets the pace of new clinic openings.">
       <div class="q4narrow">
-        <ol class="q4why" role="list" aria-label="Why each of the first three prospects fits, with invented data">
-          <li><div class="q4pair" aria-hidden="true" style="--h:162; --y:0%"><i></i><i></i></div><div class="q4reason"><b>Keystone Compliance Training (fit score 92 out of 100)</b> Mandated yearly training makes renewals dependable. <span>Concern: two hospital systems make up a large share of revenue.</span></div></li>
-          <li><div class="q4pair" aria-hidden="true" style="--h:83; --y:46.369295%"><i></i><i></i></div><div class="q4reason"><b>Tarnwick Health (fit score 91 out of 100)</b> Agencies use it every shift to meet state visit-verification rules, so customers stay through staff turnover. <span>Concern: most customers are in three states.</span></div></li>
-          <li><div class="q4pair" aria-hidden="true" style="--h:110; --y:86.703297%"><i></i><i></i></div><div class="q4reason"><b>Meridian Physical Therapy (fit score 88 out of 100)</b> A dense clinic footprint with room to add sites in neighboring counties. <span>Concern: therapist hiring sets the pace of new clinic openings.</span></div></li>
+        <ol class="sourcing-prospects" role="list" aria-label="First three prospects by fit score, with invented data">
+          <li>
+            <details>
+              <summary><span>Keystone Compliance Training</span><strong><span class="sr">Fit score </span>92<span class="sr"> out of 100</span></strong></summary>
+              <div class="prospect-evidence">
+                <p>Online compliance courses for healthcare employers.</p>
+                <dl><dt>Fit</dt><dd>Mandated yearly training makes renewals dependable.</dd><dt>Concern</dt><dd>Two hospital systems make up a large share of revenue.</dd></dl>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details open>
+              <summary id="tarnwick-fit"><span>Tarnwick Health</span><strong><span class="sr">Fit score </span>91<span class="sr"> out of 100</span></strong></summary>
+              <div class="prospect-evidence">
+                <p>Scheduling and visit-verification software for home health agencies.</p>
+                <dl><dt>Fit</dt><dd>Agencies use it every shift to meet state visit-verification rules, so customers stay through staff turnover.</dd><dt>Concern</dt><dd>Most customers are in three states.</dd></dl>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary><span>Meridian Physical Therapy</span><strong><span class="sr">Fit score </span>88<span class="sr"> out of 100</span></strong></summary>
+              <div class="prospect-evidence">
+                <p>Eleven outpatient physical therapy clinics across two states.</p>
+                <dl><dt>Fit</dt><dd>A dense clinic footprint with room to add sites in neighboring counties.</dd><dt>Concern</dt><dd>Therapist hiring sets the pace of new clinic openings.</dd></dl>
+              </div>
+            </details>
+          </li>
         </ol>
+      </div>
       </div>
     </div>
       <ul class="tiles cells">
@@ -1422,16 +1448,31 @@ h2 .soft { color:inherit; }
   </div>
 </section>
 
-<section class="sec s5" id="evaluation" aria-labelledby="h5">
-  <div class="wrap g12">
-    <div class="words">
-      <p class="label" style="--c:var(--d1)"><i></i>Prospect evaluation</p>
-      <h2 id="h5">From data room to investment memo, <span class="soft">with the gaps and red flags marked.</span></h2>
-      <p class="body">From the diligence materials, FirmCortex shows what is missing, what is concerning and what to ask next. Open red flags stay on the deal until they are closed.</p>
-    </div>
-    <div class="draw">
-      <figure class="dd5" id="dealfile">
-        <div class="list5">
+<section id="evaluation" class="deal-review" aria-labelledby="h5">
+  <div class="deal-review-inner">
+    <header class="deal-review-intro">
+      <p class="deal-review-label">Prospect evaluation</p>
+      <h2 id="h5">How much of Halden’s EBITDA will recur?</h2>
+      <p class="deal-review-deck">FirmCortex drafts the investment memo from diligence materials and flags what’s missing. Open questions stay on the deal until your team resolves them.</p>
+    </header>
+    <figure class="deal-review-memo">
+      <div class="memo5">
+          <p class="mt"><b>IC Synthesis</b><span>Halden Learning Systems, draft</span></p>
+          <p class="mh">Executive summary</p>
+          <p>Workforce learning. FY26 revenue $51.0M, EBITDA $16.2M.</p>
+          <p class="mh">Financial analysis</p>
+          <p>Revenue growth 18.5%, EBITDA margin 31.8%.</p>
+          <p class="mh">Market &amp; competition</p>
+          <p>Its closest rival has just been acquired.</p>
+          <p class="mh">Key risks &amp; mitigants</p>
+          <p class="fl" id="m-fin"><i class="fg9"></i>Red flag: $1.9M of FY26 EBITDA is one-time</p>
+          <p class="fl" id="m-tech"><i class="fg9"></i>Red flag: aging course platform</p>
+        </div>
+      <figcaption>Excerpt from Halden’s investment committee memo</figcaption>
+    </figure>
+    <details class="deal-review-checklist">
+      <summary>Halden’s diligence checklist</summary>
+      <div class="list5">
           <p class="lhh">Halden Learning Systems</p>
           <p class="lh"><b>Diligence checklist</b><span>2 red flags, 2 not started</span></p>
           <ol>
@@ -1446,21 +1487,7 @@ h2 .soft { color:inherit; }
             <li>ESG<em>Not started</em></li>
           </ol>
         </div>
-        <svg class="wires5" id="wires5" aria-hidden="true"></svg>
-        <div class="memo5">
-          <p class="mt"><b>IC Synthesis</b><span>Halden Learning Systems, draft</span></p>
-          <p class="mh">Executive summary</p>
-          <p>Workforce learning. FY26 revenue $51.0M, EBITDA $16.2M.</p>
-          <p class="mh">Financial analysis</p>
-          <p>Revenue growth 18.5%, EBITDA margin 31.8%.</p>
-          <p class="mh">Market &amp; competition</p>
-          <p>Its closest rival has just been acquired.</p>
-          <p class="mh">Key risks &amp; mitigants</p>
-          <p class="fl" id="m-fin"><i class="fg9"></i>Red flag: $1.9M of FY26 EBITDA is one-time</p>
-          <p class="fl" id="m-tech"><i class="fg9"></i>Red flag: aging course platform</p>
-        </div>
-      </figure>
-    </div>
+    </details>
   </div>
 </section>
 
@@ -1488,8 +1515,8 @@ h2 .soft { color:inherit; }
 <li><i aria-hidden="true">CH</i><span>Castlewick Health</span></li>
 </ul>
       </div>
-      <figure class="m6f">
-        <p class="m6c">Behind the flag: where Corvel Learning stands against its sector peers</p>
+      <figure class="m6f" id="corvel-retention" tabindex="-1" aria-labelledby="corvel-retention-title">
+        <p class="m6c" id="corvel-retention-title">Corvel Learning compared with its sector peers</p>
         <div class="corvel-card" role="img" aria-label="Corvel Learning, SaaS workforce learning. Revenue growth 14%, 46th percentile; EBITDA margin 24%, 81st; Rule of 40 38%, 63rd; gross revenue retention 93%, 77th; net revenue retention 98%, 38th.">
           <div class="corvel-header corvel-header-desktop" aria-hidden="true"><img src="assets/asset-06.png" width="2046" height="380" alt=""></div>
           <div class="corvel-header corvel-header-mobile" aria-hidden="true"><img src="assets/asset-07.png" width="676" height="750" alt=""></div>
@@ -1522,27 +1549,69 @@ h2 .soft { color:inherit; }
   </div>
 </section>
 
-<section id="value-creation" class="sec s7 vc-council vc-bridge" aria-labelledby="h7"><div class="vc-wrap"><div class="vc-intro"><p class="vc-label" style="--c:var(--d3)"><i></i>Value creation</p><h2 id="h7">A ranked plan for each <span class="vc-keep-phrase">portfolio company:</span> <span class="vc-soft">what to act on now, what to validate first.</span></h2><p class="vc-body">The plan starts from what monitoring shows: the company’s own results and where it trails its peers. Each recommendation explains what to change and why. Your team can assign someone to follow up.</p></div><div class="vc-stage"><div class="vc-ready"><p class="vc-cap" style="--c:var(--d2)"><i></i>Ready to act on</p></div><ol class="vc-plan"><li class="vc-simple"><span class="vc-rank">1</span><div class="vc-r7"><span class="vc-tag2">Pricing</span><b>Move legacy seat plans to current list price at renewal</b></div></li><li class="vc-main"><span class="vc-rank">2</span><div class="vc-from">
-        <p class="vc-cap" style="--c:var(--d2)"><i></i>From monitoring</p>
-        <div class="vc-lcard"><b>$1.2M of ARR lost across 41 customers</b><span><i></i><em>Corvel Learning</em></span></div>
-        <span class="vc-tag2">Net retention below the top quartile</span>
-      </div><i class="vc-connector" aria-hidden="true"></i><div class="vc-proof"><div class="vc-cropbox"><img class="vc-crop" src="assets/asset-08.png" width="620" height="272" alt="A small part of the value-creation plan, with invented data. Lever: retention. Ready to execute now. EV upside 6.0 million dollars. Stand up a renewal desk for accounts showing low course usage."></div><div class="vc-r7 vc-phonecard"><span class="vc-tag2">Retention</span><b>A renewal desk for accounts with low usage</b><p>The 41 customers Corvel lost in FY2026 had low course usage for two quarters before they left.</p></div></div></li><li class="vc-simple"><span class="vc-rank">3</span><div class="vc-r7"><span class="vc-tag2">Cost</span><b>Consolidate course hosting onto a single cloud contract</b></div></li></ol><p class="vc-later">Still to validate <span class="vc-tag2 vc-dash">New segment</span><span class="vc-tag2 vc-dash">Product</span></p></div></div></section>
+<section id="value-creation" class="company-plan" aria-labelledby="h7">
+  <div class="company-plan-inner">
+    <header class="company-plan-intro">
+      <div>
+        <p class="company-plan-label">Value creation</p>
+        <h2 id="h7">A ranked plan for each portfolio company.</h2>
+      </div>
+      <p class="company-plan-deck">See which actions are ready and which need more evidence. Each recommendation explains what to change and why. Your team can assign someone to follow up.</p>
+    </header>
+    <div class="company-plan-head">
+      <strong>Corvel Learning</strong><span>Ready to act on</span>
+    </div>
+    <ol class="company-plan-actions" role="list" aria-label="Corvel Learning’s ranked actions">
+      <li>
+        <div class="company-plan-row">
+          <span class="company-plan-rank" aria-hidden="true">1</span>
+          <span class="company-plan-lever">Pricing</span>
+          <h3>Move legacy seat plans to current list price at renewal</h3>
+        </div>
+      </li>
+      <li class="company-plan-retention">
+        <div class="company-plan-row">
+          <span class="company-plan-rank" aria-hidden="true">2</span>
+          <span class="company-plan-lever">Retention</span>
+          <h3>Prioritize renewals at accounts with low course usage</h3>
+        </div>
+        <div class="company-plan-evidence">
+          <div class="company-plan-case">
+            <p class="company-plan-loss"><strong>$1.2M</strong> of ARR lost across 41 customers</p>
+            <p>Those customers had low course usage for two quarters before they left.</p>
+            <p>The plan proposes a two-person renewal desk to contact accounts on the usage watchlist.</p>
+            <p class="company-plan-upside"><strong>$6.0M</strong><span>Estimated enterprise value upside</span></p>
+          </div>
+          <img class="company-plan-excerpt" src="assets/asset-08.png" width="1240" height="544" alt="Corvel’s retention plan estimates that a two-person renewal desk could retain about a third of similar accounts, worth roughly $0.5M of EBITDA.">
+        </div>
+      </li>
+      <li>
+        <div class="company-plan-row">
+          <span class="company-plan-rank" aria-hidden="true">3</span>
+          <span class="company-plan-lever">Cost</span>
+          <h3>Consolidate course hosting onto a single cloud contract</h3>
+        </div>
+      </li>
+    </ol>
+    <p class="company-plan-validate"><strong>Still to validate</strong><span>New segment</span><span>Product</span></p>
+  </div>
+</section>
 
 <section class="sec s8" id="verification" aria-labelledby="h8">
   <div class="wrap">
     <div class="verify-heading">
-    <h2 id="h8">Everything is verifiable.</h2>
-    <p class="body">Before a figure goes into a memo or to your investment committee, check it in one click. FirmCortex shows the exact cell, page or article it came from, so nobody has to take a number on trust.</p>
+    <h2 id="h8">Trace a reported figure to its source.</h2>
+    <p class="body">Before a figure goes into an investment memo, your team can check the original. Halden’s FY26 revenue comes from its income statement.</p>
     </div>
     <div class="src2">
       <figure class="chg9">
         <img class="crop" src="assets/asset-09.png" width="470" height="323" alt="The What changed panel of the FirmCortex Home page, with invented data. Five changes, each with a link to its source: competitor news on a live deal, Halden Learning Systems; its financials ingested, FY2026 revenue 51.0 million dollars and EBITDA 16.2 million; competitor news on a portfolio company, Corvel Learning; a market study completed; and news on a portfolio company, Aldergate Services.">
-        <figcaption class="cap9">Each change opens the cell, page or article behind it.</figcaption>
+        <figcaption class="cap9">Halden’s financial update in the Home feed.</figcaption>
       </figure>
       <img class="link9" src="assets/verification-connector.svg" width="80" height="20" alt="" aria-hidden="true">
       <figure class="src9">
-        <div class="fig9"><span class="lab9">FY2026 revenue, Halden Learning Systems</span><b>$51.0M</b></div>
-        <p class="row9"><b>source &#8599;</b><span class="sr">: </span>Halden data room, FY2026 financials, sheet “P&amp;L”, cell D14</p>
+        <div class="fig9"><span class="lab9">Halden Learning Systems, FY26 revenue</span><b>$51.0M</b></div>
+        <figcaption class="row9 citation"><span>Source</span>Halden data room, FY26 financials, P&amp;L sheet, cell D14.</figcaption>
       </figure>
     </div>
   </div>
@@ -1608,24 +1677,8 @@ h2 .soft { color:inherit; }
     $('form-note').textContent = 'Preview complete. No message was sent. The contact inbox will be connected before launch.'; $('form-note').setAttribute('tabindex', '-1'); $('form-note').scrollIntoView({ block: 'center' }); $('form-note').focus({ preventScroll: true });
   });
 
-  /* Thin dotted connectors, drawn from where the things actually are (prospect evaluation). Hidden on small screens, where the layouts stack. */
-  function dots(svg, pairs, tone) {
-    var r = svg.getBoundingClientRect(), out = '';
-    pairs.forEach(function (q, i) {
-      var a = q[0].getBoundingClientRect(), b = q[1].getBoundingClientRect();
-      var x1 = a.right - r.left + (q[2] || 0), y1 = a.top + a.height / 2 - r.top, x2 = b.left - r.left - (q[3] || 0), y2 = b.top + b.height * (q[4] === undefined ? 0.5 : q[4]) - r.top, mx = (x1 + x2) / 2 + ((pairs.length - 1) / 2 - i) * 8;
-      out += '<path d="M' + x1 + ' ' + y1 + ' H' + mx + ' V' + y2 + ' H' + x2 + '" fill="none" stroke="' + tone + '" stroke-width="1" stroke-dasharray="2 4" stroke-linecap="round"/><circle cx="' + x1 + '" cy="' + y1 + '" r="2.5" fill="' + tone + '"/><circle cx="' + x2 + '" cy="' + y2 + '" r="2.5" fill="' + tone + '"/>';
-    });
-    svg.innerHTML = out;
-  }
-  function wires() { dots($('wires5'), [[$('t-fin'), $('m-fin'), 22, 6], [$('t-tech'), $('m-tech'), 22, 6]], 'rgba(59,31,43,.5)'); }
-  var rt = 0;
-  window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(wires, 120); });
   /* ?still=1 shows the settled picture at once (used for captures and checks). */
   if (/[?&]still=1/.test(location.search)) hero.classList.add('still');
-  wires();
-  window.addEventListener('load', wires);
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(wires);
 })();
 </script>
 
@@ -1771,6 +1824,6 @@ h2 .soft { color:inherit; }
   if (reduced.matches) onReduced(); else { syncDrift(); t = setTimeout(next, 2700); }
 })();
 </script>
-<script src="mobile-refinements.js"></script>
+<script src="mobile-refinements.js?v=9"></script>
 </body>
 </html>

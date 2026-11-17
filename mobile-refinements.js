@@ -6,11 +6,6 @@
   var words = contact.querySelector('.words');
   var form = document.getElementById('form');
   var trust = words.querySelector('.trust');
-  var list = document.querySelector('#evaluation .list5');
-  var company = list.querySelector('.lhh');
-  var title = list.querySelector('.lh');
-  var rows = list.querySelector('ol');
-  var checklist = null;
   var retention = document.querySelector('.corvel-metric.attention');
   var percentile = null;
   var capabilities = Array.prototype.map.call(document.querySelectorAll('#sourcing .tile'), function (tile) {
@@ -25,14 +20,6 @@
         percentile.style.cssText = '--crop-y:292;--crop-w:224;--crop-h:42';
         retention.append(percentile);
       }
-      if (!checklist) {
-        checklist = document.createElement('details');
-        checklist.className = 'mobile-checklist';
-        var summary = document.createElement('summary');
-        summary.append(company, title);
-        checklist.append(summary, rows);
-        list.append(checklist);
-      }
       capabilities.forEach(function (item) {
         if (item.details) return;
         item.details = document.createElement('details');
@@ -45,11 +32,6 @@
     } else {
       if (percentile) { percentile.remove(); percentile = null; }
       if (form.parentElement !== contact) contact.append(form);
-      if (checklist) {
-        list.append(company, title, rows);
-        checklist.remove();
-        checklist = null;
-      }
       capabilities.forEach(function (item) {
         if (!item.details) return;
         item.tile.append(item.title, item.body);
@@ -131,4 +113,38 @@
   } else seen = true;
   [mobile, reduced].forEach(function (query) { if (query.addEventListener) query.addEventListener('change', sync); else query.addListener(sync); });
   sync();
+})();
+
+(function () {
+  'use strict';
+  const link = document.querySelector('[data-sourcing-link]');
+  const queue = document.getElementById('sourcing-queue');
+  const summary = document.getElementById('tarnwick-fit');
+  const details = summary.closest('details');
+  const narrow = window.matchMedia('(max-width: 860px)');
+
+  function updateLink() {
+    link.hash = narrow.matches ? summary.id : queue.id;
+  }
+
+  function followFragment() {
+    if (location.hash !== '#' + summary.id && location.hash !== '#' + queue.id) return;
+    if (narrow.matches) details.open = true;
+    // A shared link may have been copied at the other viewport size.
+    const target = narrow.matches ? summary : queue;
+    if (location.hash !== '#' + target.id) {
+      target.focus({ preventScroll: true });
+      target.scrollIntoView();
+    }
+  }
+
+  updateLink();
+  narrow.addEventListener('change', updateLink);
+  link.addEventListener('click', function () {
+    // A repeated visit to the same fragment does not fire hashchange.
+    if (narrow.matches) details.open = true;
+  });
+  window.addEventListener('hashchange', followFragment);
+  if (document.readyState === 'complete') followFragment();
+  else window.addEventListener('load', followFragment, { once: true });
 })();
