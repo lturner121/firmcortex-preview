@@ -2,7 +2,7 @@
 :is(#platform, #sourcing, #evaluation, #value-creation, #verification) {
   --mute: var(--ink);
 }
-#platform .k2h { max-width: 32ch; }
+#platform .k2f { margin-top: 0; }
 #verification .verify-heading { display: block; }
 
 /* Match the existing comparison image breakpoint and align its tags to the columns. */
