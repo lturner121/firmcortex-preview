@@ -1,3 +1,10 @@
+/* Financial notes and qualifications use the same ink as the exhibit text. */
+:is(#platform, #sourcing, #evaluation, #value-creation, #verification) {
+  --mute: var(--ink);
+}
+#platform .k2h { max-width: 32ch; }
+#verification .verify-heading { display: block; }
+
 /* Match the existing comparison image breakpoint and align its tags to the columns. */
 @media (min-width: 701px) {
   #platform .k2tags { display: block; }
@@ -16,7 +23,7 @@
   #platform .company-comparison th:first-child { width: 46%; text-align: left; }
   #platform .company-comparison thead th {
     padding: 0 0 9px;
-    color: #e7dfe3;
+    color: #fff;
     font-size: var(--product-label);
     line-height: 1.35;
     font-weight: 500;
@@ -28,7 +35,7 @@
   #platform .company-comparison tbody th { font-size: 16px; font-weight: 600; line-height: 1.35; }
   #platform .company-comparison tbody th span {
     display: block;
-    color: #e7dfe3;
+    color: #fff;
     font-size: var(--product-label);
     line-height: 1.45;
     font-weight: 400;
@@ -197,13 +204,6 @@
   box-shadow: 0 6px 20px #3425350c;
 }
 
-#evaluation .deal-review-memo figcaption {
-  margin: 12px 2px 0;
-  color: var(--mute);
-  font-size: 14px;
-  line-height: 1.45;
-}
-
 #evaluation .deal-review-checklist {
   grid-column: 1;
   grid-row: 3;
@@ -233,18 +233,7 @@
   margin-bottom: 36px;
 }
 
-#value-creation .company-plan-head,
-#value-creation .company-plan-validate {
-  display: flex;
-  align-items: baseline;
-  gap: 16px;
-  color: var(--mute);
-  font-size: 15px;
-  line-height: 1.5;
-}
-
 #value-creation .company-plan-head {
-  justify-content: space-between;
   padding: 16px 0;
   border-top: 2px solid var(--plum);
   border-bottom: 1px solid var(--rule);
@@ -289,7 +278,7 @@
   font-weight: 600;
 }
 
-#value-creation .company-plan-retention { background: #f2f4f8; }
+#value-creation .company-plan-retention { background: white; }
 #value-creation .company-plan-evidence {
   display: grid;
   grid-template-columns: minmax(0, .84fr) minmax(0, 1.16fr);
@@ -316,7 +305,9 @@
   margin-top: 18px;
   padding-top: 12px;
   border-top: 1px solid #cdd2db;
-  font-size: 14px;
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 18px;
   line-height: 1.4;
 }
 
@@ -337,9 +328,6 @@
   border-radius: 9px;
 }
 
-#value-creation .company-plan-validate { margin: 14px 0 0; flex-wrap: wrap; }
-#value-creation .company-plan-validate strong { font-weight: 600; }
-#value-creation .company-plan-validate span + span { padding-left: 16px; border-left: 1px solid var(--rule); }
 
 @media (min-width: 761px) and (max-width: 1000px) {
   #value-creation .company-plan-evidence { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); }
@@ -361,11 +349,10 @@
 
   #evaluation .deal-review-memo { margin-top: 20px; padding: 10px; border-radius: 10px; }
   #evaluation .deal-review-memo .memo5 { padding: 18px; }
-  #evaluation .deal-review-memo figcaption { margin: 9px 3px 2px; font-size: 13px; }
   #evaluation .deal-review-checklist { margin-top: 6px; }
 
   #value-creation .company-plan-intro { margin-bottom: 24px; }
-  #value-creation .company-plan-head { gap: 8px; padding: 12px 0; font-size: 13px; }
+  #value-creation .company-plan-head { padding: 12px 0; }
   #value-creation .company-plan-head strong { font-size: 16px; }
   #value-creation .company-plan-row {
     grid-template-columns: 21px minmax(0, 1fr);
@@ -381,11 +368,9 @@
   #value-creation .company-plan-case { font-size: 16px; }
   #value-creation .company-plan-case > p + p { margin-top: 8px; }
   #value-creation .company-plan-loss { font-size: 16px; }
-  #value-creation .company-plan-case .company-plan-upside { margin-top: 11px; padding-top: 10px; gap: 3px 8px; }
+  #value-creation .company-plan-case .company-plan-upside { margin-top: 11px; padding-top: 10px; gap: 4px 8px; font-size: 17px; }
   #value-creation .company-plan-upside strong { font-size: 25px; }
   #value-creation .company-plan-excerpt { display: none; }
-  #value-creation .company-plan-validate { gap: 10px; margin-top: 12px; font-size: 14px; }
-  #value-creation .company-plan-validate span + span { padding-left: 10px; }
 }
 
 /* The workbook citation is a document reference. */
@@ -394,6 +379,6 @@
   margin-bottom: 4px;
   font-size: 14px;
   font-weight: 600;
-  color: #374151;
+  color: var(--ink);
 }
 #corvel-retention { scroll-margin-top: 12px; }
