@@ -24,21 +24,23 @@
 #evaluation .body {margin-top:16px;max-width:none}
 #evaluation .dd5 {width:100%;grid-template-columns:minmax(0,270fr) minmax(0,378fr);gap:36px}
 
-/* The Home action queue groups company, exception and supporting figures in one row. */
+/* Two companies' board-pack updates sit beside the portfolio monitoring introduction. */
 #monitoring .m6 {row-gap:36px;align-items:center}
 .portfolio-queue {margin:0;min-width:0;width:100%;background:#fff;color:#111827;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;box-shadow:0 5px 18px #170e161a;font-variant-numeric:tabular-nums}
 .portfolio-queue figcaption {display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:15px 20px;border-bottom:1px solid #e1e5eb}
 .portfolio-queue figcaption strong {font-size:16px;font-weight:650;line-height:1.3}
-.portfolio-queue figcaption span {color:#424e5d;font-size:14px;line-height:1.4}
+.portfolio-queue figcaption span {font-size:14px;line-height:1.4}
 .portfolio-queue ul {margin:0;padding:0;list-style:none}
-.portfolio-queue li {display:grid;grid-template-columns:30px minmax(0,1fr);align-items:start;gap:12px;padding:16px 20px}
+.portfolio-queue li {display:grid;grid-template-columns:32px minmax(0,1fr);align-items:start;gap:12px;padding:16px 20px}
 .portfolio-queue li+li {border-top:1px solid #e1e5eb}
-.queue-initials {display:grid;place-items:center;width:30px;height:30px;margin-top:2px;border-radius:6px;background:#eef4fc;color:#175b9b;border:1px solid #d5e3f5;font-size:12px;font-weight:700}
+.portfolio-queue .queue-mark {display:block;width:32px;height:32px;margin-top:2px}
 .portfolio-queue li strong {display:block;font-size:17px;line-height:1.35;font-weight:650;letter-spacing:-.015em}
-.portfolio-queue li p {margin:2px 0 0;color:#263245;font-size:16px;line-height:1.45;text-wrap:pretty}
+.portfolio-queue li p {margin:2px 0 0;font-size:16px;line-height:1.45;text-wrap:pretty}
 .portfolio-queue li b {color:#111827;font-weight:650;white-space:nowrap}
+.portfolio-queue li:nth-child(2) b {white-space:normal}
 #monitoring .m6f::before {display:none}
 #monitoring .m6c {margin:0 0 6px}
+#monitoring .stage6 .body,#monitoring .m6c,#monitoring .m6n {color:#fff}
 
 /* Original supplied pixels, clipped and placed at the exact Figma source coordinates. */
 .corvel-card {container-type:inline-size;--pixel:calc(100cqw / 2046);background:white;border:1px solid #dde2ea;border-radius:12px;overflow:hidden;padding-bottom:22px}
@@ -108,8 +110,8 @@
   #evaluation .dd5 {grid-template-columns:1fr;gap:24px}
   #monitoring .m6 {row-gap:28px}
   .portfolio-queue figcaption {padding:13px 14px}
-  .portfolio-queue li {padding:14px;gap:9px;grid-template-columns:26px minmax(0,1fr)}
-  .portfolio-queue .queue-initials {width:26px;height:26px;font-size:11px}
+  .portfolio-queue li {padding:14px;gap:10px;grid-template-columns:28px minmax(0,1fr)}
+  .portfolio-queue .queue-mark {width:28px;height:28px}
   #monitoring .m6f {grid-template-columns:minmax(0,1fr);row-gap:14px}
   #monitoring .m6c {margin:0}
   #monitoring .m6n {font-size:15px;line-height:23px}

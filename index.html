@@ -1247,12 +1247,12 @@ h2 .soft { color:inherit; }
 
 #value-creation.vc-council {padding-left:var(--pad);padding-right:var(--pad);}
 </style>
-<link rel="stylesheet" href="section-refinements.css?v=portfolio-queue">
+<link rel="stylesheet" href="section-refinements.css?v=portfolio-marks">
 <link rel="stylesheet" href="mobile-refinements.css?v=7">
 <link rel="stylesheet" href="product-typography.css?v=8.7">
 <link rel="stylesheet" href="investment-exhibits.css?v=4">
 <link rel="stylesheet" href="evaluation-exhibit.css?v=2">
-<link rel="stylesheet" href="value-creation-exhibit.css?v=2">
+<link rel="stylesheet" href="value-creation-exhibit.css?v=afternoon">
 </head>
 <body>
 <a class="skip" href="#hero-title">Skip to content</a>
@@ -1497,26 +1497,26 @@ h2 .soft { color:inherit; }
       <div class="words">
         <p class="label" style="--c:var(--s2)"><i></i>Portfolio monitoring</p>
         <h2 id="h6">What changed across the portfolio?</h2>
-        <p class="body">FirmCortex flags customer losses and overdue board packs. Compare a company’s results with peers in your own portfolio and deal flow.</p>
+        <p class="body">See where results beat or missed budget, how margins changed and which strategic updates management highlighted in its latest board pack. Compare performance with peers in your portfolio and deal flow.</p>
       </div>
       <figure class="portfolio-queue" aria-labelledby="portfolio-queue-title">
         <figcaption>
-          <strong id="portfolio-queue-title">Action items</strong>
+          <strong id="portfolio-queue-title">Board pack updates</strong>
           <span>2 of 9 companies</span>
         </figcaption>
         <ul>
           <li>
-            <span class="queue-initials" aria-hidden="true">CL</span>
+            <img class="queue-mark" src="assets/corvel-learning-mark.svg" width="32" height="32" alt="">
             <div>
               <strong>Corvel Learning</strong>
-              <p><b>$1.2M</b> of ARR lost across <b>41 customers</b> in FY26.</p>
+              <p>October revenue was <b>4% below budget</b>. EBITDA margin was <b>24%</b>, down from <b>26%</b> in September.</p>
             </div>
           </li>
           <li>
-            <span class="queue-initials" aria-hidden="true">BB</span>
+            <img class="queue-mark" src="assets/brackenhall-billing-mark.svg" width="32" height="32" alt="">
             <div>
               <strong>Brackenhall Billing</strong>
-              <p>Last board pack <b>74 days ago</b>, usually every <b>30 days</b>.</p>
+              <p>The board approved a plan to <b>bring collections in-house</b> when the servicing contract expires in March.</p>
             </div>
           </li>
         </ul>
@@ -1555,53 +1555,57 @@ h2 .soft { color:inherit; }
   </div>
 </section>
 
-<section id="value-creation" aria-labelledby="h7">
-  <div class="plan-inner">
-    <header>
-      <p class="plan-label">Value creation</p>
-      <h2 id="h7">A ranked plan for each portfolio company.</h2>
+<section id="value-creation" class="sec s7 vc-council vc-bridge" aria-labelledby="h7">
+  <div class="vc-wrap">
+    <header class="vc-intro">
+      <p class="vc-label" style="--c:var(--d3)"><i aria-hidden="true"></i>Value creation</p>
+      <h2 id="h7">A ranked plan for each <span class="vc-keep-phrase">portfolio company.</span></h2>
+      <p class="vc-body">The plan starts with what monitoring shows about the company’s results and where it trails its peers. Each recommendation explains what to change and why. Your team can assign someone to follow up.</p>
     </header>
-    <div class="ranked-plan">
-      <p class="plan-company">Corvel Learning</p>
-      <ol class="plan-actions" role="list" aria-label="Corvel Learning’s ranked actions">
-        <li class="plan-row">
-          <span class="plan-rank" aria-hidden="true">1</span>
-          <span class="plan-lever">Pricing</span>
-          <h3>Move legacy seat plans to current list price at renewal</h3>
+    <div class="vc-stage">
+      <ol class="vc-plan" role="list" aria-label="Corvel Learning’s ranked actions">
+        <li class="vc-simple">
+          <span class="vc-rank" aria-hidden="true">1</span>
+          <div class="vc-r7">
+            <span class="vc-tag2">Pricing</span>
+            <b>Move legacy seat plans to current list price at renewal</b>
+          </div>
         </li>
-        <li class="plan-row retention-row">
-          <span class="plan-rank" aria-hidden="true">2</span>
-          <span class="plan-lever">Retention</span>
-          <div class="retention-layout">
-            <div class="plan-evidence">
-              <p class="plan-source">From monitoring</p>
-              <dl class="plan-metrics">
-                <dt>ARR lost</dt>
-                <dd><strong>$1.2M</strong> across 41 customers</dd>
-                <dt>Net revenue retention</dt>
-                <dd><strong>98%</strong> vs. 108% top quartile</dd>
-              </dl>
+        <li class="vc-main">
+          <span class="vc-rank" aria-hidden="true">2</span>
+          <div class="vc-from">
+            <p class="vc-cap" style="--c:var(--d2)"><i aria-hidden="true"></i>From monitoring</p>
+            <div class="vc-lcard">
+              <b>$1.2M of ARR lost across 41 customers</b>
+              <span><i aria-hidden="true"></i><em>Corvel Learning</em></span>
             </div>
-            <span class="plan-connection" aria-hidden="true"></span>
-            <div class="plan-proposal">
-              <figure class="plan-excerpt">
-                <img src="assets/asset-08.png" width="1240" height="544" alt="Stand up a renewal desk for accounts showing low course usage. The 41 customers lost in FY26 had low usage for two quarters before leaving. A two-person desk working a usage watchlist could retain about a third of similar accounts, worth roughly $0.5M of EBITDA.">
-              </figure>
-              <h3 class="plan-mobile">Stand up a renewal desk for accounts with low course usage</h3>
-              <p class="plan-mobile">The 41 customers had low usage for two quarters before leaving. A two-person desk could retain about a third of similar accounts, worth roughly $0.5M in EBITDA.</p>
-              <dl class="plan-estimate">
-                <dt>Estimated enterprise value upside</dt>
-                <dd><strong>$6.0M</strong></dd>
-              </dl>
+            <span class="vc-tag2">Net retention 98% vs. 108% top quartile</span>
+          </div>
+          <i class="vc-connector" aria-hidden="true"></i>
+          <div class="vc-proof">
+            <div class="vc-cropbox">
+              <img class="vc-crop" src="assets/asset-08.png?v=ink" width="1240" height="544" alt="Retention, execute now, FY26 actuals. Estimated enterprise value upside of $6.0M. Stand up a renewal desk for accounts showing low course usage. The 41 customers Corvel lost in FY26 had low usage for two quarters before leaving. A two-person desk could retain about a third of similar accounts, worth roughly $0.5M of EBITDA.">
+            </div>
+            <div class="vc-r7 vc-phonecard">
+              <div class="vc-phone-tags">
+                <span class="vc-tag2">Retention</span>
+                <span class="vc-tag2 vc-execute">Execute now</span>
+              </div>
+              <b>A renewal desk for accounts with low course usage</b>
+              <p>The 41 customers Corvel lost in FY26 had low course usage for two quarters before they left. A two-person desk could retain about a third of similar accounts, worth roughly $0.5M of EBITDA.</p>
+              <p class="vc-phone-estimate">Estimated enterprise value upside <strong>$6.0M</strong></p>
             </div>
           </div>
         </li>
-        <li class="plan-row">
-          <span class="plan-rank" aria-hidden="true">3</span>
-          <span class="plan-lever">Cost</span>
-          <h3>Consolidate course hosting onto a single cloud contract</h3>
+        <li class="vc-simple">
+          <span class="vc-rank" aria-hidden="true">3</span>
+          <div class="vc-r7">
+            <span class="vc-tag2">Cost</span>
+            <b>Consolidate course hosting onto a single cloud contract</b>
+          </div>
         </li>
       </ol>
+      <p class="vc-later">Still to validate <span class="vc-tag2">New segment</span><span class="vc-tag2">Product</span></p>
     </div>
   </div>
 </section>
