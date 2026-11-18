@@ -1250,7 +1250,9 @@ h2 .soft { color:inherit; }
 <link rel="stylesheet" href="section-refinements.css?v=6">
 <link rel="stylesheet" href="mobile-refinements.css?v=7">
 <link rel="stylesheet" href="product-typography.css?v=8.7">
-<link rel="stylesheet" href="investment-exhibits.css?v=3">
+<link rel="stylesheet" href="investment-exhibits.css?v=4">
+<link rel="stylesheet" href="evaluation-exhibit.css">
+<link rel="stylesheet" href="value-creation-exhibit.css">
 </head>
 <body>
 <a class="skip" href="#hero-title">Skip to content</a>
@@ -1443,45 +1445,49 @@ h2 .soft { color:inherit; }
   </div>
 </section>
 
-<section id="evaluation" class="deal-review" aria-labelledby="h5">
-  <div class="deal-review-inner">
-    <header class="deal-review-intro">
-      <p class="deal-review-label">Prospect evaluation</p>
-      <h2 id="h5">How much of Halden’s EBITDA will recur?</h2>
-      <p class="deal-review-deck">FirmCortex drafts the investment memo from diligence materials and flags what’s missing. Open questions stay on the deal until your team resolves them.</p>
+<section id="evaluation" aria-labelledby="h5">
+  <div class="evaluation-layout">
+    <header class="evaluation-intro">
+      <p class="evaluation-label">Prospect evaluation</p>
+      <h2 id="h5">From data room to investment memo.</h2>
+      <p class="evaluation-deck">FirmCortex drafts the investment memo from diligence materials and flags what’s missing. Open questions stay on the deal until your team resolves them.</p>
     </header>
-    <figure class="deal-review-memo" aria-label="Excerpt from Halden’s investment committee memo">
-      <div class="memo5">
-          <p class="mt"><b>IC Synthesis</b><span>Halden Learning Systems, draft</span></p>
-          <p class="mh">Executive summary</p>
-          <p>Workforce learning. FY26 revenue $51.0M, EBITDA $16.2M.</p>
-          <p class="mh">Financial analysis</p>
-          <p>Revenue growth 18.5%, EBITDA margin 31.8%.</p>
-          <p class="mh">Market &amp; competition</p>
-          <p>Its closest rival has just been acquired.</p>
-          <p class="mh">Key risks &amp; mitigants</p>
-          <p class="fl" id="m-fin"><i class="fg9"></i>Red flag: $1.9M of FY26 EBITDA is one-time</p>
-          <p class="fl" id="m-tech"><i class="fg9"></i>Red flag: aging course platform</p>
-        </div>
-    </figure>
-    <details class="deal-review-checklist">
-      <summary>Halden’s diligence checklist</summary>
-      <div class="list5">
-          <p class="lhh">Halden Learning Systems</p>
-          <p class="lh"><b>Diligence checklist</b><span>2 red flags, 2 not started</span></p>
-          <ol>
-            <li>Commercial<i class="ok5"></i><span class="sr">, completed</span></li>
-            <li class="flag" id="t-fin">Financial and quality of earnings<span class="cn5"><i class="fg9"></i>1</span><span class="sr"> open red flag</span></li>
-            <li>Operational<i class="ok5"></i><span class="sr">, completed</span></li>
-            <li class="flag" id="t-tech">Technology<span class="cn5"><i class="fg9"></i>1</span><span class="sr"> open red flag</span></li>
-            <li>People<em class="st5">In progress</em></li>
-            <li>Legal and regulatory<i class="ok5"></i><span class="sr">, completed</span></li>
+    <div class="evaluation-exhibits">
+      <figure class="evaluation-file" aria-label="Halden’s diligence checklist and draft investment committee memo">
+        <div class="diligence-checklist">
+          <p class="diligence-company">Halden Learning Systems</p>
+          <p class="diligence-heading"><b>Diligence checklist</b><span>2 red flags, 2 not started</span></p>
+          <button class="diligence-toggle" type="button" aria-expanded="false" aria-controls="workstreams"><strong>Halden’s diligence checklist</strong><span>2 red flags, 2 not started</span></button>
+          <ol id="workstreams" role="list">
+            <li>Commercial<i class="diligence-complete"></i><span class="sr">, completed</span></li>
+            <li class="diligence-flagged" id="t-fin">Financial and quality of earnings<span class="diligence-count"><i class="diligence-flag"></i>1</span><span class="sr"> open red flag</span></li>
+            <li>Operational<i class="diligence-complete"></i><span class="sr">, completed</span></li>
+            <li class="diligence-flagged" id="t-tech">Technology<span class="diligence-count"><i class="diligence-flag"></i>1</span><span class="sr"> open red flag</span></li>
+            <li>People<em class="in-progress">In progress</em></li>
+            <li>Legal and regulatory<i class="diligence-complete"></i><span class="sr">, completed</span></li>
             <li>Tax<em>Not started</em></li>
-            <li>Insurance and risk<em class="st5">In progress</em></li>
+            <li>Insurance and risk<em class="in-progress">In progress</em></li>
             <li>ESG<em>Not started</em></li>
           </ol>
         </div>
-    </details>
+        <svg class="diligence-connectors" aria-hidden="true" focusable="false" fill="#8e7884" stroke="#8e7884" stroke-linecap="round">
+          <g data-from="t-fin" data-to="m-fin"><path fill="none" stroke-dasharray="2 4"/><circle r="2.4" stroke="none"/><circle r="2.4" stroke="none"/></g>
+          <g data-from="t-tech" data-to="m-tech"><path fill="none" stroke-dasharray="2 4"/><circle r="2.4" stroke="none"/><circle r="2.4" stroke="none"/></g>
+        </svg>
+        <div class="diligence-memo">
+          <p class="memo-title"><b>IC Synthesis</b><span>Halden Learning Systems, draft</span></p>
+          <p class="memo-heading">Executive summary</p>
+          <p>Workforce learning. FY26 revenue $51.0M, EBITDA $16.2M.</p>
+          <p class="memo-heading">Financial analysis</p>
+          <p>Revenue growth 18.5%, EBITDA margin 31.8%.</p>
+          <p class="memo-heading">Market &amp; competition</p>
+          <p>Its closest rival has just been acquired.</p>
+          <p class="memo-heading">Key risks &amp; mitigants</p>
+          <p class="memo-risk" id="m-fin"><i class="diligence-flag"></i>Red flag: $1.9M of FY26 EBITDA is one-time</p>
+          <p class="memo-risk" id="m-tech"><i class="diligence-flag"></i>Red flag: aging course platform</p>
+        </div>
+      </figure>
+    </div>
   </div>
 </section>
 
@@ -1543,50 +1549,50 @@ h2 .soft { color:inherit; }
   </div>
 </section>
 
-<section id="value-creation" class="company-plan" aria-labelledby="h7">
-  <div class="company-plan-inner">
-    <header class="company-plan-intro">
-      <div>
-        <p class="company-plan-label">Value creation</p>
-        <h2 id="h7">A ranked plan for each portfolio company.</h2>
-      </div>
-      <p class="company-plan-deck">FirmCortex uses prospect and portfolio benchmarks to recommend ways to grow revenue or reduce costs. The plan lists actions your team can assign and ideas that still need testing.</p>
+<section id="value-creation" aria-labelledby="h7">
+  <div class="plan-inner">
+    <header>
+      <p class="plan-label">Value creation</p>
+      <h2 id="h7">A ranked plan for each portfolio company.</h2>
     </header>
-    <div class="company-plan-head">
-      <strong>Corvel Learning</strong>
-    </div>
-    <ol class="company-plan-actions" role="list" aria-label="Corvel Learning’s ranked actions">
-      <li>
-        <div class="company-plan-row">
-          <span class="company-plan-rank" aria-hidden="true">1</span>
-          <span class="company-plan-lever">Pricing</span>
+    <div class="ranked-plan">
+      <p class="plan-company">Corvel Learning</p>
+      <ol class="plan-actions" role="list" aria-label="Corvel Learning’s ranked actions">
+        <li class="plan-row">
+          <span class="plan-rank" aria-hidden="true">1</span>
+          <span class="plan-lever">Pricing</span>
           <h3>Move legacy seat plans to current list price at renewal</h3>
-        </div>
-      </li>
-      <li class="company-plan-retention">
-        <div class="company-plan-row">
-          <span class="company-plan-rank" aria-hidden="true">2</span>
-          <span class="company-plan-lever">Retention</span>
-          <h3>Prioritize renewals at accounts with low course usage</h3>
-        </div>
-        <div class="company-plan-evidence">
-          <div class="company-plan-case">
-            <p class="company-plan-loss"><strong>$1.2M</strong> of ARR lost across 41 customers</p>
-            <p>Those customers had low course usage for two quarters before they left. Corvel’s net retention was 98% against a top-quartile benchmark of 108%.</p>
-            <p>The plan proposes a two-person renewal desk to contact accounts on the usage watchlist.</p>
-            <p class="company-plan-upside"><strong>$6.0M</strong><span>Estimated enterprise value upside</span></p>
+        </li>
+        <li class="plan-row retention-row">
+          <span class="plan-rank" aria-hidden="true">2</span>
+          <span class="plan-lever">Retention</span>
+          <div class="retention-layout">
+            <div>
+              <h3 class="plan-mobile">Stand up a renewal desk for accounts with low course usage</h3>
+              <dl class="plan-metrics">
+                <dt>ARR lost</dt>
+                <dd><strong>$1.2M</strong> across 41 customers</dd>
+                <dt>Net revenue retention</dt>
+                <dd><strong>98%</strong> vs. 108% top quartile</dd>
+              </dl>
+              <p class="plan-mobile">The 41 customers had low usage for two quarters before leaving. A two-person desk could retain about a third of similar accounts, worth roughly $0.5M in EBITDA.</p>
+              <dl class="plan-estimate">
+                <dt>Estimated enterprise value upside</dt>
+                <dd><strong>$6.0M</strong></dd>
+              </dl>
+            </div>
+            <figure class="plan-excerpt">
+              <img src="assets/asset-08.png" width="1240" height="544" alt="Stand up a renewal desk for accounts showing low course usage. The 41 customers lost in FY26 had low usage for two quarters before leaving. A two-person desk working a usage watchlist could retain about a third of similar accounts, worth roughly $0.5M of EBITDA.">
+            </figure>
           </div>
-          <img class="company-plan-excerpt" src="assets/asset-08.png" width="1240" height="544" alt="Corvel’s retention plan estimates that a two-person renewal desk could retain about a third of similar accounts, worth roughly $0.5M of EBITDA.">
-        </div>
-      </li>
-      <li>
-        <div class="company-plan-row">
-          <span class="company-plan-rank" aria-hidden="true">3</span>
-          <span class="company-plan-lever">Cost</span>
+        </li>
+        <li class="plan-row">
+          <span class="plan-rank" aria-hidden="true">3</span>
+          <span class="plan-lever">Cost</span>
           <h3>Consolidate course hosting onto a single cloud contract</h3>
-        </div>
-      </li>
-    </ol>
+        </li>
+      </ol>
+    </div>
   </div>
 </section>
 
@@ -1813,6 +1819,42 @@ h2 .soft { color:inherit; }
   }
   if (reduced.addEventListener) reduced.addEventListener('change', onReduced); else if (reduced.addListener) reduced.addListener(onReduced);
   if (reduced.matches) onReduced(); else { syncDrift(); t = setTimeout(next, 2700); }
+})();
+</script>
+<script>
+(function () {
+  const file = document.querySelector('.evaluation-file');
+  const toggle = file.querySelector('.diligence-toggle');
+  const connectors = file.querySelector('.diligence-connectors');
+  toggle.addEventListener('click', function () {
+    toggle.setAttribute('aria-expanded', String(toggle.getAttribute('aria-expanded') === 'false'));
+  });
+  file.classList.add('checklist-ready');
+
+  function drawConnectors() {
+    const origin = connectors.getBoundingClientRect();
+    if (!origin.width) return;
+    connectors.querySelectorAll('g').forEach(function (wire, index) {
+      const row = document.getElementById(wire.dataset.from).getBoundingClientRect();
+      const risk = document.getElementById(wire.dataset.to).getBoundingClientRect();
+      const startX = row.right - origin.left + 22;
+      const startY = row.top + row.height / 2 - origin.top;
+      const endX = risk.left - origin.left - 6;
+      const endY = risk.top + risk.height / 2 - origin.top;
+      const middle = (startX + endX) / 2 + (0.5 - index) * 9;
+      const [path, start, end] = wire.children;
+      path.setAttribute('d', `M${startX} ${startY} H${middle} V${endY} H${endX}`);
+      start.setAttribute('cx', startX);
+      start.setAttribute('cy', startY);
+      end.setAttribute('cx', endX);
+      end.setAttribute('cy', endY);
+    });
+    connectors.classList.add('is-drawn');
+  }
+  drawConnectors();
+  if (window.ResizeObserver) new ResizeObserver(drawConnectors).observe(file);
+  else window.addEventListener('resize', drawConnectors);
+  if (document.fonts) document.fonts.ready.then(drawConnectors);
 })();
 </script>
 <script src="mobile-refinements.js?v=9"></script>
