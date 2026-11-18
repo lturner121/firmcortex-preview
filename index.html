@@ -40,7 +40,7 @@ section { position:relative; }
     linear-gradient(180deg, #26131C 0%, var(--plum-ink) 100%); }
 .grain::before { content:""; position:absolute; inset:0; z-index:5; pointer-events:none; opacity:.1; mix-blend-mode:overlay;
   background-image:url("assets/asset-10.svg"); }
-.header { position:fixed; z-index:30; top:0; left:0; right:0; height:80px; padding:0 max(var(--pad), calc((100vw - 1296px) / 2 + var(--pad))); display:flex; align-items:center; gap:28px; color:#fff; transition:background-color .2s ease, height .2s ease; }
+.header { position:fixed; z-index:30; top:0; left:0; right:0; height:80px; padding:0 max(var(--pad), calc((100% - 1296px) / 2 + var(--pad))); display:flex; align-items:center; gap:28px; color:#fff; transition:background-color .2s ease, height .2s ease; }
 .header.solid { height:62px; background:#1A0C13; box-shadow:0 1px 0 rgba(255,255,255,.12); }
 .header.stuck { height:62px; background:#fff; color:var(--ink); box-shadow:0 1px 0 var(--rule), 0 8px 24px rgba(17,24,39,.06); }
 .header.stuck .nav a, .header.stuck .navbtn { color:var(--ink); } .header.stuck .demo { background:var(--plum); color:#fff; } .header.stuck .demo:hover { background:#4E2A3A; }
