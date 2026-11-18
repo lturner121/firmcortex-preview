@@ -41,6 +41,26 @@
 #monitoring .m6f::before {display:none}
 #monitoring .m6c {margin:0 0 6px}
 #monitoring .stage6 .body,#monitoring .m6c,#monitoring .m6n {color:#fff}
+#monitoring.sec {padding-bottom:clamp(14px,2.2vw,30px)}
+#monitoring .m6n {display:flex;align-items:baseline;justify-content:space-between;gap:8px 24px;flex-wrap:wrap}
+#monitoring .plan-link {color:#c5e4ff;font-weight:600;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+#monitoring .plan-link:hover {color:white}
+#monitoring .plan-link:focus-visible {outline:2px solid #c5e4ff;outline-offset:3px}
+.feed-byline {display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.feed-source,.source-close {color:#1266b3;background:transparent;border:0;font:600 14px/22px Inter,Arial,sans-serif;cursor:pointer}
+.feed-source {white-space:nowrap;padding:3px 0 3px 6px}
+.source-close {padding:4px}
+.feed-source:hover,.source-close:hover {text-decoration:underline;text-underline-offset:3px}
+.feed-source:focus-visible,.source-close:focus-visible {outline:2px solid #1870cb;outline-offset:3px}
+.source-note {background:white;color:#111827;border:1px solid #c9cdd5;border-radius:12px;padding:26px;width:min(440px,calc(100vw - 36px));max-height:85vh;margin:auto;box-shadow:0 20px 60px #160d142e}
+.source-note::backdrop {background:#170d19a8}
+.source-note .note-top {display:flex;align-items:center;justify-content:space-between;gap:12px}
+.source-note .note-top p {font-size:13px;line-height:1.4;font-weight:600;margin:0}
+.source-note h2 {font:650 23px/1.25 Inter,Arial,sans-serif;letter-spacing:-.03em;margin:18px 0 14px}
+.source-note table {width:100%;border-collapse:collapse}
+.source-note th,.source-note td {border-top:1px solid #dce0e7;padding:9px 0;text-align:left;font:400 15px/1.45 Inter,Arial,sans-serif}
+.source-note td {text-align:right;font-weight:600}
+.source-note .excerpt-text {font-size:16px;line-height:1.55;margin:0}
 
 /* Original supplied pixels, clipped and placed at the exact Figma source coordinates. */
 .corvel-card {container-type:inline-size;--pixel:calc(100cqw / 2046);background:white;border:1px solid #dde2ea;border-radius:12px;overflow:hidden;padding-bottom:22px}
@@ -114,7 +134,10 @@
   .portfolio-queue .queue-mark {width:28px;height:28px}
   #monitoring .m6f {grid-template-columns:minmax(0,1fr);row-gap:14px}
   #monitoring .m6c {margin:0}
-  #monitoring .m6n {font-size:15px;line-height:23px}
+  #monitoring .m6n {display:block;font-size:15px;line-height:23px}
+  #monitoring .plan-link {display:block;width:fit-content;margin-top:8px}
+  .feed-source {font-size:13px}
+  .source-note {padding:20px}
   #value-creation.vc-bridge .vc-simple {margin-left:8px;margin-right:8px;padding:0}
   #value-creation .vc-simple .vc-r7 {flex-direction:column;align-items:flex-start;gap:6px;padding:14px}
   #value-creation .vc-simple .vc-tag2 {width:auto}

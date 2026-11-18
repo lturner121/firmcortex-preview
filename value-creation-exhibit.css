@@ -2,6 +2,18 @@
   --mute: var(--ink);
 }
 
+#value-creation.vc-council {padding-top:clamp(30px,3.6vw,52px)}
+#value-creation.vc-bridge .vc-intro {display:block;max-width:1036px;margin:0 auto}
+#value-creation.vc-bridge .vc-intro h2 {text-wrap:initial;max-width:none}
+#value-creation.vc-bridge .vc-intro .vc-body {max-width:68ch;margin:12px 0 0;color:var(--ink)}
+#value-creation.vc-bridge .vc-stage {margin-top:28px}
+#corvel-renewal {scroll-margin-top:88px}
+#corvel-renewal:focus-visible {outline:2px solid #1870cb;outline-offset:3px}
+@media (max-width:760px) {
+  #value-creation.vc-bridge .vc-intro .vc-body {margin-top:10px}
+  #value-creation.vc-bridge .vc-stage {margin-top:22px}
+}
+
 #value-creation .vc-simple .vc-rank,
 #value-creation .vc-simple .vc-tag2 {
   color: var(--ink);

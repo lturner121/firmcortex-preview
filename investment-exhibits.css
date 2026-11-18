@@ -77,6 +77,16 @@
     list-style: none;
   }
   #sourcing .sourcing-prospects summary::-webkit-details-marker { display: none; }
+  #sourcing .prospect-identity {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  #sourcing .prospect-identity img {
+    flex: none;
+    width: 24px;
+    height: 24px;
+  }
   #sourcing .sourcing-prospects summary strong {
     font-size: 20px;
     line-height: 1.3;
@@ -115,6 +125,12 @@
   }
   #sourcing .prospect-evidence dt { font-weight: 600; color: var(--ink); }
   #sourcing .prospect-evidence dd { margin: 0; }
+}
+
+@media (max-width: 360px) {
+  #sourcing .sourcing-prospects summary { gap: 8px; padding-inline: 12px; }
+  #sourcing .prospect-identity { gap: 6px; }
+  #sourcing .prospect-evidence dt { max-width: 4.25em; }
 }
 
 /* The workbook citation is a document reference. */
