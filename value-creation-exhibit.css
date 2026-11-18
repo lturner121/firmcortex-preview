@@ -19,7 +19,17 @@
   color: var(--ink);
 }
 
-#value-creation .vc-phone-tags {
+#value-creation .vc-renewal-card {
+  display: grid;
+  gap: 12px;
+  padding: clamp(16px, 2vw, 26px);
+  border: 1px solid #dde2ea;
+  border-radius: 14px;
+  background: white;
+  box-shadow: 0 4px 6px rgba(17, 24, 39, .07), 0 22px 40px -20px rgba(17, 24, 39, .25);
+}
+
+#value-creation .vc-action-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
@@ -30,16 +40,28 @@
   color: #067647;
 }
 
-#value-creation .vc-r7.vc-phonecard .vc-phone-estimate {
-  padding-top: 8px;
-  border-top: 1px solid var(--rule);
-  width: 100%;
-  font-size: var(--product-label);
-}
-
-#value-creation .vc-phone-estimate strong {
-  display: block;
+#value-creation .vc-renewal-card h3 {
+  margin: 0;
   font-size: var(--product-title);
   line-height: 1.3;
-  color: var(--plum);
+  letter-spacing: -.02em;
+}
+
+#value-creation .vc-renewal-card p {
+  font-size: var(--product-body);
+  line-height: 1.45;
+}
+
+@media (min-width: 1001px) {
+  #value-creation.vc-bridge .vc-main::before { inset-block: 12px; }
+  #value-creation.vc-bridge .vc-from { padding-block: 28px; }
+  #value-creation .vc-renewal-card { align-self: stretch; align-content: center; }
+}
+
+@media (max-width: 760px) {
+  #value-creation .vc-renewal-card {
+    gap: 8px;
+    border-radius: 12px;
+    box-shadow: 0 2px 3px rgba(17, 24, 39, .05);
+  }
 }

@@ -5,22 +5,21 @@
 #platform .k2f { margin-top: 0; }
 #verification .verify-heading { display: block; }
 
-/* Match the existing comparison image breakpoint and align its tags to the columns. */
-@media (min-width: 701px) {
-  #platform .k2tags { display: block; }
-}
-
-@media (max-width: 700px) {
+/* Use selectable figures until the full comparison can render near its original size. */
+@media (max-width: 1199px) {
+  #platform .k2wide,
+  #platform .k2tags { display: none; }
+  #platform .k2st { display: block; }
   #platform .company-comparison {
     width: 100%;
     border-collapse: collapse;
-    table-layout: fixed;
     color: #fff;
     font-variant-numeric: tabular-nums;
   }
   #platform .company-comparison th,
   #platform .company-comparison td { text-align: right; vertical-align: middle; }
-  #platform .company-comparison th:first-child { width: 46%; text-align: left; }
+  #platform .company-comparison th:first-child { text-align: left; }
+  #platform .company-comparison thead th + th { width: 27%; }
   #platform .company-comparison thead th {
     padding: 0 0 9px;
     color: #fff;
@@ -31,6 +30,8 @@
   #platform .company-comparison tbody tr { border-top: 1px solid #ffffff38; }
   #platform .company-comparison tbody th,
   #platform .company-comparison td { padding: 12px 0; }
+  #platform .company-comparison thead th + th,
+  #platform .company-comparison td { padding-inline-start: 10px; }
   #platform .company-comparison tbody tr:last-child > * { padding-bottom: 0; }
   #platform .company-comparison tbody th { font-size: 16px; font-weight: 600; line-height: 1.35; }
   #platform .company-comparison tbody th span {
@@ -45,6 +46,7 @@
     line-height: 1.25;
     font-weight: 600;
     letter-spacing: -.025em;
+    white-space: nowrap;
   }
 }
 
@@ -133,12 +135,43 @@
   #sourcing .prospect-evidence dt { max-width: 4.25em; }
 }
 
-/* The workbook citation is a document reference. */
+/* The marked source in the FY26 financials row and its citation open the same sheet. */
+#verification .chg9 { position: relative; }
+#verification .halden-feed-source {
+  position: absolute;
+  left: 78.2%;
+  top: 39.4%;
+  transform: translate(-50%, -50%);
+  width: 12%;
+  min-width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+}
+#verification .halden-feed-source:hover { background: rgb(24 112 203 / 8%); }
+#verification .citation button {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
 #verification .citation span {
   display: block;
   margin-bottom: 4px;
   font-size: 14px;
   font-weight: 600;
-  color: var(--ink);
+  color: #1266b3;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
+#verification .citation button:hover span { text-decoration-thickness: 2px; }
 #corvel-retention { scroll-margin-top: 12px; }

@@ -61,6 +61,15 @@
 .source-note th,.source-note td {border-top:1px solid #dce0e7;padding:9px 0;text-align:left;font:400 15px/1.45 Inter,Arial,sans-serif}
 .source-note td {text-align:right;font-weight:600}
 .source-note .excerpt-text {font-size:16px;line-height:1.55;margin:0}
+.workbook-excerpt {font-variant-numeric:tabular-nums}
+.workbook-excerpt caption {text-align:left;font-size:15px;margin:0 0 10px}
+.workbook-excerpt th,.workbook-excerpt td {padding:8px 6px}
+.workbook-excerpt td {font-weight:400}
+.workbook-excerpt thead th {background:#eef2f7;font-size:13px;font-weight:600}
+.workbook-excerpt thead th:last-child {text-align:right}
+.workbook-excerpt td:first-child {text-align:left;font-size:13px;font-weight:500}
+.workbook-excerpt tbody tr:last-child td:last-child {background:#eaf2fb;color:#123c65;font-weight:700}
+.workbook-total {margin:14px 0 0;font-size:15px;line-height:1.5}
 
 /* Original supplied pixels, clipped and placed at the exact Figma source coordinates. */
 .corvel-card {container-type:inline-size;--pixel:calc(100cqw / 2046);background:white;border:1px solid #dde2ea;border-radius:12px;overflow:hidden;padding-bottom:22px}
@@ -69,7 +78,7 @@
 .corvel-header-mobile {display:none}
 .corvel-grid {display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;margin-top:12px;padding:0 28px}
 .corvel-metric {position:relative;min-width:0;display:flex;flex-direction:column;gap:6px}
-.corvel-pixels {display:block;flex:none;width:calc(var(--crop-w) * var(--pixel));height:calc(var(--crop-h) * var(--pixel));background-image:url('assets/asset-06.png');background-repeat:no-repeat;background-size:calc(2046 * var(--pixel)) calc(380 * var(--pixel));background-position:calc(-1 * var(--source-x) * var(--pixel)) calc(-1 * var(--crop-y) * var(--pixel))}
+.corvel-pixels {display:block;flex:none;width:calc(var(--crop-w) * var(--pixel));height:calc(var(--crop-h) * var(--pixel));background-image:url('assets/asset-06.png?v=percentile-ink');background-repeat:no-repeat;background-size:calc(2046 * var(--pixel)) calc(380 * var(--pixel));background-position:calc(-1 * var(--source-x) * var(--pixel)) calc(-1 * var(--crop-y) * var(--pixel))}
 .corvel-metric.attention::after {content:'';position:absolute;inset:-6px -7px;border:1.2px solid #bf170f;border-radius:10px;pointer-events:none}
 
 /* Full boundaries replace the underlines without competing with the open plan. */
@@ -136,7 +145,8 @@
   #monitoring .m6c {margin:0}
   #monitoring .m6n {display:block;font-size:15px;line-height:23px}
   #monitoring .plan-link {display:block;width:fit-content;margin-top:8px}
-  .feed-source {font-size:13px}
+  .feed-source {min-height:44px;font-size:13px}
+  .source-close {min-height:44px;min-width:44px}
   .source-note {padding:20px}
   #value-creation.vc-bridge .vc-simple {margin-left:8px;margin-right:8px;padding:0}
   #value-creation .vc-simple .vc-r7 {flex-direction:column;align-items:flex-start;gap:6px;padding:14px}
