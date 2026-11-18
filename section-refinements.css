@@ -24,20 +24,19 @@
 #evaluation .body {margin-top:16px;max-width:none}
 #evaluation .dd5 {width:100%;grid-template-columns:minmax(0,270fr) minmax(0,378fr);gap:36px}
 
-/* The two flags lead; the remainder of the portfolio stays as context. */
-#monitoring .m6 {row-gap:12px}
-#monitoring .watch {align-self:start;padding-top:48px}
-#monitoring .nine {font-size:14px;line-height:20px;font-weight:500;color:white;margin:0 0 14px}
-#monitoring .priority-flags {grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-#monitoring .priority-flags li {min-height:116px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:16px;border:1px solid #dde2ea;border-radius:10px;box-shadow:none}
-#monitoring .priority-flags li.cl9 {border:1.5px solid var(--blue)}
-#monitoring .priority-flags li>i {display:none}
-#monitoring .priority-flags li>span {font-size:15px;line-height:22px;font-weight:600;white-space:normal}
-#monitoring .priority-flags em {margin:0;font-size:18px;line-height:26px;color:var(--ink);font-weight:600}
-#monitoring .priority-flags em .fg9 {display:none}
-#monitoring .quiet-roster {margin-top:14px;gap:8px 12px}
-#monitoring .quiet-roster li {min-height:42px;padding:8px 12px;opacity:.9}
-#monitoring .quiet-roster li:last-child {grid-column:2}
+/* The Home action queue groups company, exception and supporting figures in one row. */
+#monitoring .m6 {row-gap:36px;align-items:center}
+.portfolio-queue {margin:0;min-width:0;width:100%;background:#fff;color:#111827;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;box-shadow:0 5px 18px #170e161a;font-variant-numeric:tabular-nums}
+.portfolio-queue figcaption {display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:15px 20px;border-bottom:1px solid #e1e5eb}
+.portfolio-queue figcaption strong {font-size:16px;font-weight:650;line-height:1.3}
+.portfolio-queue figcaption span {color:#424e5d;font-size:14px;line-height:1.4}
+.portfolio-queue ul {margin:0;padding:0;list-style:none}
+.portfolio-queue li {display:grid;grid-template-columns:30px minmax(0,1fr);align-items:start;gap:12px;padding:16px 20px}
+.portfolio-queue li+li {border-top:1px solid #e1e5eb}
+.queue-initials {display:grid;place-items:center;width:30px;height:30px;margin-top:2px;border-radius:6px;background:#eef4fc;color:#175b9b;border:1px solid #d5e3f5;font-size:12px;font-weight:700}
+.portfolio-queue li strong {display:block;font-size:17px;line-height:1.35;font-weight:650;letter-spacing:-.015em}
+.portfolio-queue li p {margin:2px 0 0;color:#263245;font-size:16px;line-height:1.45;text-wrap:pretty}
+.portfolio-queue li b {color:#111827;font-weight:650;white-space:nowrap}
 #monitoring .m6f::before {display:none}
 #monitoring .m6c {margin:0 0 6px}
 
@@ -78,7 +77,6 @@
   #evaluation .wrap {grid-template-columns:minmax(0,1fr);gap:36px}
   #evaluation .words {grid-column:1;grid-row:1;max-width:720px}
   #evaluation .draw {grid-column:1;grid-row:2;width:100%;max-width:720px}
-  #monitoring .watch {padding-top:0}
   #monitoring .m6 {row-gap:28px}
   #verification .src2 {padding:0;gap:40px}
   #verification .link9 {display:none}
@@ -109,14 +107,9 @@
   #evaluation .draw {padding:0;background:none}
   #evaluation .dd5 {grid-template-columns:1fr;gap:24px}
   #monitoring .m6 {row-gap:28px}
-  #monitoring .priority-flags {grid-template-columns:1fr;gap:10px}
-  #monitoring .priority-flags li {display:grid;grid-template-columns:24px minmax(0,1fr);gap:0 9px;padding:12px;border:1px solid white;min-height:0;border-radius:12px}
-  #monitoring .priority-flags li.cl9 {border:1px solid white}
-  #monitoring .priority-flags li>i {display:grid}
-  #monitoring .priority-flags li>span {font-size:13px;line-height:18px}
-  #monitoring .priority-flags em {margin-top:8px;grid-column:1/-1;font-size:14px;line-height:19px;color:var(--flag)}
-  #monitoring .priority-flags em .fg9 {display:block}
-  #monitoring .quiet-roster {display:none}
+  .portfolio-queue figcaption {padding:13px 14px}
+  .portfolio-queue li {padding:14px;gap:9px;grid-template-columns:26px minmax(0,1fr)}
+  .portfolio-queue .queue-initials {width:26px;height:26px;font-size:11px}
   #monitoring .m6f {grid-template-columns:minmax(0,1fr);row-gap:14px}
   #monitoring .m6c {margin:0}
   #monitoring .m6n {font-size:15px;line-height:23px}

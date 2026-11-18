@@ -1247,12 +1247,12 @@ h2 .soft { color:inherit; }
 
 #value-creation.vc-council {padding-left:var(--pad);padding-right:var(--pad);}
 </style>
-<link rel="stylesheet" href="section-refinements.css?v=6">
+<link rel="stylesheet" href="section-refinements.css?v=portfolio-queue">
 <link rel="stylesheet" href="mobile-refinements.css?v=7">
 <link rel="stylesheet" href="product-typography.css?v=8.7">
 <link rel="stylesheet" href="investment-exhibits.css?v=4">
-<link rel="stylesheet" href="evaluation-exhibit.css">
-<link rel="stylesheet" href="value-creation-exhibit.css">
+<link rel="stylesheet" href="evaluation-exhibit.css?v=2">
+<link rel="stylesheet" href="value-creation-exhibit.css?v=2">
 </head>
 <body>
 <a class="skip" href="#hero-title">Skip to content</a>
@@ -1460,13 +1460,13 @@ h2 .soft { color:inherit; }
           <button class="diligence-toggle" type="button" aria-expanded="false" aria-controls="workstreams"><strong>Halden’s diligence checklist</strong><span>2 red flags, 2 not started</span></button>
           <ol id="workstreams" role="list">
             <li>Commercial<i class="diligence-complete"></i><span class="sr">, completed</span></li>
-            <li class="diligence-flagged" id="t-fin">Financial and quality of earnings<span class="diligence-count"><i class="diligence-flag"></i>1</span><span class="sr"> open red flag</span></li>
+            <li class="diligence-flagged" id="t-fin">Financials &amp; Quality of Earnings<span class="diligence-count"><i class="diligence-flag"></i>1</span><span class="sr"> open red flag</span></li>
             <li>Operational<i class="diligence-complete"></i><span class="sr">, completed</span></li>
             <li class="diligence-flagged" id="t-tech">Technology<span class="diligence-count"><i class="diligence-flag"></i>1</span><span class="sr"> open red flag</span></li>
             <li>People<em class="in-progress">In progress</em></li>
             <li>Legal and regulatory<i class="diligence-complete"></i><span class="sr">, completed</span></li>
             <li>Tax<em>Not started</em></li>
-            <li>Insurance and risk<em class="in-progress">In progress</em></li>
+            <li>Insurance<em class="in-progress">In progress</em></li>
             <li>ESG<em>Not started</em></li>
           </ol>
         </div>
@@ -1499,22 +1499,28 @@ h2 .soft { color:inherit; }
         <h2 id="h6">What changed across the portfolio?</h2>
         <p class="body">FirmCortex flags customer losses and overdue board packs. Compare a company’s results with peers in your own portfolio and deal flow.</p>
       </div>
-      <div class="watch w9">
-        <p class="nine">Nine portfolio companies, two flagged</p>
-        <ul class="t9 priority-flags" aria-label="Flagged portfolio companies">
-<li class="on9 cl9"><i aria-hidden="true">CL</i><span>Corvel Learning</span><em><b class="fg9"></b><span class="sr">Flagged: </span>$1.2M of ARR lost across 41 customers</em></li>
-<li class="on9"><i aria-hidden="true">BB</i><span>Brackenhall Billing</span><em><b class="fg9"></b><span class="sr">Flagged: </span>Board pack overdue</em></li>
-</ul>
-        <ul class="t9 quiet-roster" aria-label="Other portfolio companies">
-<li><i aria-hidden="true">WA</i><span>Wexcombe Analytics</span></li>
-<li><i aria-hidden="true">AS</i><span>Aldergate Services</span></li>
-<li><i aria-hidden="true">YS</i><span>Yarrowby Staffing</span></li>
-<li><i aria-hidden="true">IL</i><span>Ivelstone Labs</span></li>
-<li><i aria-hidden="true">TS</i><span>Thornbury Systems</span></li>
-<li><i aria-hidden="true">FS</i><span>Farnleigh Software</span></li>
-<li><i aria-hidden="true">CH</i><span>Castlewick Health</span></li>
-</ul>
-      </div>
+      <figure class="portfolio-queue" aria-labelledby="portfolio-queue-title">
+        <figcaption>
+          <strong id="portfolio-queue-title">Action items</strong>
+          <span>2 of 9 companies</span>
+        </figcaption>
+        <ul>
+          <li>
+            <span class="queue-initials" aria-hidden="true">CL</span>
+            <div>
+              <strong>Corvel Learning</strong>
+              <p><b>$1.2M</b> of ARR lost across <b>41 customers</b> in FY26.</p>
+            </div>
+          </li>
+          <li>
+            <span class="queue-initials" aria-hidden="true">BB</span>
+            <div>
+              <strong>Brackenhall Billing</strong>
+              <p>Last board pack <b>74 days ago</b>, usually every <b>30 days</b>.</p>
+            </div>
+          </li>
+        </ul>
+      </figure>
       <figure class="m6f" id="corvel-retention" tabindex="-1" aria-labelledby="corvel-retention-title">
         <p class="m6c" id="corvel-retention-title">Corvel Learning compared with its sector peers</p>
         <div class="corvel-card" role="img" aria-label="Corvel Learning, SaaS workforce learning. Revenue growth 14%, 46th percentile; EBITDA margin 24%, 81st; Rule of 40 38%, 63rd; gross revenue retention 93%, 77th; net revenue retention 98%, 38th.">
@@ -1567,23 +1573,27 @@ h2 .soft { color:inherit; }
           <span class="plan-rank" aria-hidden="true">2</span>
           <span class="plan-lever">Retention</span>
           <div class="retention-layout">
-            <div>
-              <h3 class="plan-mobile">Stand up a renewal desk for accounts with low course usage</h3>
+            <div class="plan-evidence">
+              <p class="plan-source">From monitoring</p>
               <dl class="plan-metrics">
                 <dt>ARR lost</dt>
                 <dd><strong>$1.2M</strong> across 41 customers</dd>
                 <dt>Net revenue retention</dt>
                 <dd><strong>98%</strong> vs. 108% top quartile</dd>
               </dl>
+            </div>
+            <span class="plan-connection" aria-hidden="true"></span>
+            <div class="plan-proposal">
+              <figure class="plan-excerpt">
+                <img src="assets/asset-08.png" width="1240" height="544" alt="Stand up a renewal desk for accounts showing low course usage. The 41 customers lost in FY26 had low usage for two quarters before leaving. A two-person desk working a usage watchlist could retain about a third of similar accounts, worth roughly $0.5M of EBITDA.">
+              </figure>
+              <h3 class="plan-mobile">Stand up a renewal desk for accounts with low course usage</h3>
               <p class="plan-mobile">The 41 customers had low usage for two quarters before leaving. A two-person desk could retain about a third of similar accounts, worth roughly $0.5M in EBITDA.</p>
               <dl class="plan-estimate">
                 <dt>Estimated enterprise value upside</dt>
                 <dd><strong>$6.0M</strong></dd>
               </dl>
             </div>
-            <figure class="plan-excerpt">
-              <img src="assets/asset-08.png" width="1240" height="544" alt="Stand up a renewal desk for accounts showing low course usage. The 41 customers lost in FY26 had low usage for two quarters before leaving. A two-person desk working a usage watchlist could retain about a third of similar accounts, worth roughly $0.5M of EBITDA.">
-            </figure>
           </div>
         </li>
         <li class="plan-row">

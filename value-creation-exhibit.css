@@ -72,15 +72,52 @@
 #value-creation .retention-row .plan-lever { padding-top: 4px; }
 #value-creation .retention-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.76fr);
+  grid-template-columns: minmax(0, 1fr) clamp(30px, 4vw, 60px) minmax(0, 1.9fr);
   align-items: start;
-  gap: clamp(18px, 3vw, 42px);
+  max-width: 1000px;
 }
 
-#value-creation :is(.plan-metrics, .plan-estimate) dt { font-size: 15px; line-height: 1.45; }
-#value-creation :is(.plan-metrics, .plan-estimate) dd { margin-top: 2px; font-size: 16px; line-height: 1.4; }
-#value-creation .plan-metrics dd + dt,
-#value-creation .plan-estimate { margin-top: 13px; }
+#value-creation .plan-evidence {
+  padding: 16px 20px;
+  border-radius: 8px;
+  background: var(--grey);
+}
+#value-creation .plan-source {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+#value-creation .plan-source::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background: var(--d2);
+  border-radius: 50%;
+}
+#value-creation .plan-connection {
+  position: relative;
+  margin-top: 70px;
+  border-top: 1px dashed #846e78;
+}
+#value-creation .plan-connection::after {
+  content: "";
+  position: absolute;
+  right: 1px;
+  top: -3.5px;
+  width: 6px;
+  height: 6px;
+  border-top: 1.5px solid var(--plum);
+  border-right: 1.5px solid var(--plum);
+  transform: rotate(45deg);
+}
+
+#value-creation .plan-metrics dt { font-size: 14px; line-height: 1.45; color: var(--mute); }
+#value-creation .plan-metrics dd { margin-top: 1px; font-size: 16px; line-height: 1.4; }
+#value-creation .plan-metrics dd + dt { margin-top: 12px; }
 #value-creation :is(.plan-metrics, .plan-estimate) strong {
   color: var(--plum);
   font-size: 24px;
@@ -88,14 +125,21 @@
   font-weight: 600;
 }
 
-#value-creation .plan-excerpt {
-  width: 100%;
-  max-width: 620px;
-  justify-self: end;
+#value-creation .plan-proposal {
   border: 1px solid #dfe2e8;
   border-radius: 9px;
   overflow: hidden;
 }
+#value-creation .plan-estimate {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px clamp(16px, 1.7vw, 25px);
+  border-top: 1px solid var(--rule);
+}
+#value-creation .plan-estimate dt { font-size: 15px; line-height: 1.35; }
+#value-creation .plan-estimate dd { line-height: 1.25; }
 
 /* The lower part of the supplied product card contains the renewal proposal. */
 #value-creation .plan-excerpt img {
@@ -111,22 +155,15 @@
 
 @media (min-width: 761px) and (max-width: 1150px) {
   #value-creation .plan-row { grid-template-columns: 24px 70px minmax(0, 1fr); }
-  #value-creation .retention-layout { grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); }
 }
 
-@media (max-width: 880px) {
-  #value-creation .retention-layout { display: block; }
+/* A live text equivalent preserves the proposal's reading size at narrower widths. */
+@media (max-width: 1150px) {
   #value-creation .plan-excerpt { display: none; }
   #value-creation .plan-mobile { display: block; }
-  #value-creation p.plan-mobile { margin-top: 12px; font-size: 16px; line-height: 1.5; }
-  #value-creation .plan-estimate { margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--rule); }
-  #value-creation .plan-estimate dt { font-size: 16px; }
-  #value-creation .plan-estimate strong { font-size: 23px; }
-  #value-creation .plan-metrics { margin: 14px 0; }
-  #value-creation .plan-metrics dt { font-size: 14px; }
-  #value-creation .plan-metrics dd { margin-top: 0; }
-  #value-creation .plan-metrics strong { font-size: 21px; }
-  #value-creation .plan-metrics dd + dt { margin-top: 9px; }
+  #value-creation h3.plan-mobile { padding: 16px 18px 0; }
+  #value-creation p.plan-mobile { margin: 9px 18px 16px; font-size: 16px; line-height: 1.5; color: var(--mute); }
+  #value-creation .plan-estimate { padding-inline: 18px; }
 }
 
 @media (max-width: 760px) {
@@ -146,8 +183,21 @@
   #value-creation .retention-layout, #value-creation .plan-row h3 { grid-column: 2; }
   #value-creation .plan-row h3 { font-size: 18px; }
   #value-creation .retention-row { padding-block: 16px; }
-}
-
-@media (max-width: 359px) {
-  #value-creation .plan-estimate dt { font-size: 15px; letter-spacing: -.015em; text-wrap: balance; }
+  #value-creation .retention-layout { grid-template-columns: minmax(0, 1fr); margin-top: 6px; }
+  #value-creation .plan-evidence { padding: 13px 15px; }
+  #value-creation .plan-source { margin-bottom: 9px; }
+  #value-creation .plan-metrics dd + dt { margin-top: 7px; }
+  #value-creation :is(.plan-metrics, .plan-estimate) strong { font-size: 21px; }
+  #value-creation .plan-connection {
+    justify-self: start;
+    margin: 0 0 0 24px;
+    height: 22px;
+    border-top: 0;
+    border-left: 1px dashed #846e78;
+  }
+  #value-creation .plan-connection::after { right: -2.5px; top: auto; bottom: 1px; transform: rotate(135deg); }
+  #value-creation h3.plan-mobile { padding: 14px 15px 0; }
+  #value-creation p.plan-mobile { margin: 8px 15px 14px; }
+  #value-creation .plan-estimate { align-items: center; padding: 10px 15px; }
+  #value-creation .plan-estimate dt { text-wrap: balance; }
 }
