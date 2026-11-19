@@ -3,7 +3,6 @@
 
 @media (max-width:700px) {
   /* One connected group, with all four stages and their existing copy visible. */
-  #hero .herocta { display:none; }
   #hero .copy { padding-bottom:26px; }
   #hero .heroR { width:100%; height:auto; margin:0 0 44px; }
   #hero .scene2, #hero .ov2, #hero .bl2 { display:none; }

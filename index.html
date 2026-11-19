@@ -280,10 +280,6 @@ h2 .soft { color:inherit; }
 
 /* ---------- DRAFT round 6 ---------- */
 .s3[hidden] { display:none; }
-.herocta { margin:32px 0 0; display:flex; flex-wrap:wrap; align-items:center; gap:10px 22px; }
-.herocta .demo { padding:14px 20px; font-size:16px; }
-.herocta .quiet { font-size:16px; line-height:24px; font-weight:600; color:#fff; text-decoration:underline; text-decoration-color:rgba(255,255,255,.45); text-underline-offset:5px; }
-.herocta .quiet:hover { text-decoration-color:#fff; }
 .taken { margin:0 0 10px 4px; font-size:13.5px; line-height:20px; font-weight:600; color:rgba(255,255,255,.82); }
 .few .card { grid-template-columns:minmax(0, 1fr); padding-left:22px; }
 .card .who, .card .why, .card .next { grid-column:1; }
@@ -755,7 +751,6 @@ h2 .soft { color:inherit; }
 .t9 li i, .fco i { font-size:11px; }
 /* marks that were too faint */
 .ok5 { border-color:#6B7280; }
-.herocta .quiet { padding:12px 0; }
 @media (forced-colors: active) {
   .fg9 { forced-color-adjust:none; }
   .t9 li, .fcard, .list5, .memo5, .r7, .trust li, .fgot li, .bl2 { border:1px solid CanvasText; }
@@ -921,7 +916,6 @@ h2 .soft { color:inherit; }
 }
 
 /* ---------- round 15: usability and accessibility ---------- */
-.herocta .demo { margin-left:0; }
 .memo5 p.mh { margin:22px 0 4px; font-size:14px; line-height:20px; font-weight:600; color:var(--ink); }
 .t9 li.on9 i { color:#17693F; }
 .tag2 i { font-size:10px; color:#0F5AA8; }
@@ -997,7 +991,7 @@ h2 .soft { color:inherit; }
 .q4 { margin-top:48px; padding:48px; border-color:var(--panel-edge); }
 .q4 .crop { display:block; height:auto; }
 .q4wide { width:100%; max-width:912px; margin:0 auto; border-radius:14px; box-shadow:var(--sh3); }
-.q4narrow { display:none; --k4n:url("assets/asset-04.png"); --k4f:url("assets/asset-05.png"); }
+.q4narrow { display:none; --k4n:url("assets/asset-04.png?v=keystone-k"); --k4f:url("assets/asset-05.png"); }
 @media (max-width:1100px) { .q4 { padding:32px; } }
 @media (max-width:860px) {
   .q4wide { display:none !important; }
@@ -1274,7 +1268,6 @@ h2 .soft { color:inherit; }
       <p class="audience">For private markets investors</p>
       <h1 id="hero-title" tabindex="-1">One system for the full investment life cycle, and a clear view of what to prioritize.</h1>
       <p class="sub">Sourcing, prospect evaluation, portfolio monitoring and value creation in one platform. What you learn at one stage sharpens every other, and your team sees what needs attention now.</p>
-      <p class="herocta"><a class="demo" href="#contact">Request demo</a></p>
     </div>
     <div class="heroR" id="heroR">
 <svg class="ov2" id="ov2" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"></svg>
@@ -1358,7 +1351,7 @@ h2 .soft { color:inherit; }
         <li class="card" id="card1" style="--sc:#6FAEF0" data-s="0"><span class="who"><i style="--c:var(--d0)"></i><b>Tarnwick Health</b> Sourcing</span><span class="why">Scores 91 of 100 against your criteria</span><a class="next" href="#sourcing-queue" data-sourcing-link>See why Tarnwick scored 91</a></li>
         <li class="card" id="card2" style="--sc:#D9A9C2" data-s="1"><span class="who"><i style="--c:var(--d1)"></i><b>Halden Fleet Systems</b> Prospect evaluation</span><span class="why">Red flag: $1.9M of FY26 EBITDA is one-time</span><a class="next" href="#evaluation">Review Halden’s diligence flags</a></li>
         <li class="card" id="card0" style="--sc:#6FCB9B" data-s="2" data-t="3"><span class="who"><i style="--c:var(--d2)"></i><b>Corvel Learning</b> Portfolio monitoring</span><span class="why">$1.2M of ARR lost across 41 customers in FY26</span><a class="next" href="#corvel-retention">Compare Corvel’s retention with its peers</a></li>
-        <li class="card" id="card3" style="--sc:#E2C27E" data-s="3"><span class="who"><i style="--c:var(--d3)"></i><b>Corvel Learning</b> Value creation</span><span class="why">A plan to improve net retention</span><a class="next" href="#value-creation">See the plan, ranked by what to act on first</a></li>
+        <li class="card" id="card3" style="--sc:#E2C27E" data-s="3"><span class="who"><i style="--c:var(--d3)"></i><b>Corvel Learning</b> Value creation</span><span class="why">Contact low-usage accounts before renewal</span><a class="next" href="#corvel-renewal">Review Corvel’s renewal plan</a></li>
       </ol>
     </div>
     </div>
@@ -1378,7 +1371,7 @@ h2 .soft { color:inherit; }
       <p class="wr-queue-head"><b>Screening queue</b><span>Fit score</span></p>
       <ol class="wr-ranking" aria-label="Prospects ranked by fit score out of 100">
         <li class="wr-first">
-          <img src="assets/keystone-inspection-mobile.svg" width="26" height="26" alt="">
+          <img src="assets/keystone-inspection-mark.svg?v=keystone-k" width="26" height="26" alt="">
           <strong>Keystone Inspection Services</strong><b>92</b>
           <p class="wr-fit">Multi-year contracts cover annual inspections.</p>
         </li>
@@ -1511,12 +1504,12 @@ h2 .soft { color:inherit; }
     <div class="panel q4">
 
       <div id="sourcing-queue" role="group" aria-label="Prospects ranked by fit score" tabindex="-1">
-      <img class="crop q4wide" src="assets/asset-03.png?v=calder-vision" width="1033" height="565" alt="Description, Strategic Fit and Concerns for three illustrative prospects. Keystone Inspection Services, 92 out of 100. Tests fire alarms and sprinklers in commercial buildings. Multi-year contracts cover annual inspections. Two property managers account for a large share of revenue. Tarnwick Health, 91 out of 100. Sells scheduling and visit-verification software to home health agencies. Agencies use its visit logs every shift to meet state requirements. Most customers are in three states. Calder Vision Systems, 88 out of 100. Sells cameras and software that catch labeling errors on food packaging lines. Plants can install the system on existing lines without replacing their packaging equipment. One supplier makes the image sensor used in every camera.">
+      <img class="crop q4wide" src="assets/asset-03.png?v=keystone-k" width="1033" height="565" alt="Description, Strategic Fit and Concerns for three illustrative prospects. Keystone Inspection Services, 92 out of 100. Tests fire alarms and sprinklers in commercial buildings. Multi-year contracts cover annual inspections. Two property managers account for a large share of revenue. Tarnwick Health, 91 out of 100. Sells scheduling and visit-verification software to home health agencies. Agencies use its visit logs every shift to meet state requirements. Most customers are in three states. Calder Vision Systems, 88 out of 100. Sells cameras and software that catch labeling errors on food packaging lines. Plants can install the system on existing lines without replacing their packaging equipment. One supplier makes the image sensor used in every camera.">
       <div class="q4narrow">
         <ol class="sourcing-prospects" role="list" aria-label="First three prospects by fit score, with invented data">
           <li>
             <details>
-              <summary><span class="prospect-identity"><img src="assets/keystone-inspection-mark.svg" data-mobile-src="assets/keystone-inspection-mobile.svg" width="24" height="24" alt="">Keystone Inspection Services</span><strong><span class="sr">Fit score </span>92<span aria-hidden="true">/100</span><span class="sr"> out of 100</span></strong></summary>
+              <summary><span class="prospect-identity"><img src="assets/keystone-inspection-mark.svg?v=keystone-k" width="24" height="24" alt="">Keystone Inspection Services</span><strong><span class="sr">Fit score </span>92<span aria-hidden="true">/100</span><span class="sr"> out of 100</span></strong></summary>
               <div class="prospect-evidence">
                 <p>Tests fire alarms and sprinklers in commercial buildings.</p>
                 <dl><dt>Strategic fit</dt><dd>Multi-year contracts cover annual inspections.</dd><dt>Concern</dt><dd>Two property managers account for a large share of revenue.</dd></dl>
@@ -2028,6 +2021,6 @@ document.querySelectorAll('button[data-excerpt]').forEach(button => {
   button.addEventListener('click', () => excerpt.showModal());
 });
 </script>
-<script src="mobile-stages.js"></script>
+<script src="mobile-stages.js?v=keystone-k"></script>
 </body>
 </html>

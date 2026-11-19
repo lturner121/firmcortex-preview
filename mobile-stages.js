@@ -31,8 +31,6 @@
   const desktopIntro = introduction.textContent;
   const renewalTitle = document.querySelector('#corvel-renewal .vc-renewal-card h3');
   const renewalText = renewalTitle.textContent;
-  const keystone = document.querySelector('#sourcing img[data-mobile-src]');
-  const desktopMark = keystone.getAttribute('src');
   const verification = document.getElementById('verification');
   const still = new URLSearchParams(location.search).get('still') === '1';
   let mobileLayout = false;
@@ -91,7 +89,6 @@
     document.documentElement.classList.toggle('mobile-stages-ready', mobileLayout);
     walk.hidden = nav.hidden = !mobileLayout;
     platformLink.hash = mobileLayout ? 'investment-stages' : 'platform';
-    keystone.setAttribute('src', mobileLayout ? keystone.dataset.mobileSrc : desktopMark);
     exhibits.forEach(({section, slot, marker}) => {
       if (mobileLayout) slot.append(section);
       else marker.after(section);
