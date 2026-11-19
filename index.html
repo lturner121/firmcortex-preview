@@ -1249,6 +1249,7 @@ h2 .soft { color:inherit; }
 <link rel="stylesheet" href="investment-exhibits.css?v=6">
 <link rel="stylesheet" href="evaluation-exhibit.css?v=2">
 <link rel="stylesheet" href="value-creation-exhibit.css?v=renewal-desk">
+<link rel="stylesheet" href="mobile-stages.css" media="(max-width:700px)">
 </head>
 <body>
 <a class="skip" href="#hero-title">Skip to content</a>
@@ -1257,6 +1258,7 @@ h2 .soft { color:inherit; }
   <a class="brand" href="#" aria-label="FirmCortex home"><img src="assets/asset-01.svg" alt=""><span>firm<strong>cortex</strong></span></a>
   <nav class="nav" id="nav" aria-label="Main navigation">
     <a href="#platform">Platform</a>
+    <ul hidden class="walk-nav-stages" aria-label="Platform stages"><li><a href="#walk-sourcing">Sourcing</a></li><li><a href="#walk-evaluation">Prospect evaluation</a></li><li><a href="#walk-monitoring">Portfolio monitoring</a></li><li><a href="#walk-value">Value creation</a></li></ul>
     <button type="button" class="navbtn" id="login" aria-describedby="login-note">Log in</button>
   </nav>
   <a class="demo" href="#contact">Request demo</a>
@@ -1363,6 +1365,116 @@ h2 .soft { color:inherit; }
   </section>
 </div>
 
+<section id="investment-stages" class="fc-walk" hidden aria-label="Investment life cycle"><ol class="walk-sequence" role="list">
+      <li class="walk-step" data-detail="sourcing" data-current>
+        <div class="walk-label">
+          <span class="walk-marker" aria-hidden="true">01</span>
+          <h2 id="walk-sourcing" class="walk-title" tabindex="-1">Sourcing</h2>
+          <p class="walk-deck">Prospects ranked against your own criteria, with the reason each one fits.</p>
+        </div>
+        <div class="walk-scene" id="walk-record-sourcing" role="region" aria-labelledby="walk-sourcing">
+  <div class="walk-record">
+    <div class="wr-queue">
+      <p class="wr-queue-head"><b>Screening queue</b><span>Fit score</span></p>
+      <ol class="wr-ranking" aria-label="Prospects ranked by fit score out of 100">
+        <li class="wr-first">
+          <img src="assets/keystone-inspection-mobile.svg" width="26" height="26" alt="">
+          <strong>Keystone Inspection Services</strong><b>92</b>
+          <p class="wr-fit">Multi-year contracts cover annual inspections.</p>
+        </li>
+        <li><img src="assets/tarnwick-health-mark.svg" width="26" height="26" alt=""><strong>Tarnwick Health</strong><b>91</b></li>
+        <li><img src="assets/calder-vision-mark.svg" width="26" height="26" alt=""><strong>Calder Vision Systems</strong><b>88</b></li>
+      </ol>
+    </div>
+  </div>
+</div>
+        <details class="walk-extra"><summary>View the sourcing queue</summary><div class="walk-evidence"></div></details>
+        <button type="button" class="walk-replay" aria-label="Replay sourcing example" title="Replay sourcing example" aria-controls="walk-record-sourcing"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 8a6.2 6.2 0 1 1 .2 5.1M4 3.5V8h4.5"/></svg></button>
+      </li>
+      <li class="walk-step" data-detail="evaluation">
+        <div class="walk-label">
+          <span class="walk-marker" aria-hidden="true">02</span>
+          <h2 id="walk-evaluation" class="walk-title" tabindex="-1">Prospect evaluation</h2>
+          <p class="walk-deck">FirmCortex drafts the investment memo from diligence materials and flags what’s missing.</p>
+        </div>
+        <div class="walk-scene" id="walk-record-evaluation" role="region" aria-labelledby="walk-evaluation">
+  <div class="walk-record">
+    <div class="hc-dossier" role="group" aria-labelledby="hc-company">
+  <div class="hc-company"><strong id="hc-company">Halden Fleet Systems</strong></div>
+  <div class="hc-checklist">
+    <p class="hc-section-name">Diligence checklist</p>
+    <div class="hc-workstream">
+      <svg class="hc-flag hc-first-flag" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 17V3m0 1c2.2-1.1 3.7-.9 5.5-.2 1.9.8 3.2 1 5.8-.1v7.2c-2.4 1-4 .7-5.8 0-1.8-.8-3.2-1-5.5.1"/></svg>
+      <span><span class="hc-sr">Flagged workstream. </span>Financials &amp; Quality of Earnings</span>
+    </div>
+  </div>
+  <div class="hc-memo" role="group" aria-labelledby="hc-memo-title">
+    <p class="hc-memo-title" id="hc-memo-title">Draft IC memo</p>
+    <dl class="hc-financials">
+      <dt>Marketed FY26 EBITDA</dt>
+      <dd><strong>$16.2M</strong></dd>
+    </dl>
+    <div class="hc-finding">
+      <svg class="hc-flag" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 17V3m0 1c2.2-1.1 3.7-.9 5.5-.2 1.9.8 3.2 1 5.8-.1v7.2c-2.4 1-4 .7-5.8 0-1.8-.8-3.2-1-5.5.1"/></svg>
+      <p><span class="hc-sr">Red flag. </span><strong>$1.9M</strong> of EBITDA is <span class="hc-keep">one-time.</span></p>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+        <details class="walk-extra"><summary>Review Halden’s diligence flags</summary><div class="walk-evidence"></div></details>
+        <button type="button" class="walk-replay" aria-label="Replay prospect evaluation example" title="Replay prospect evaluation example" aria-controls="walk-record-evaluation"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 8a6.2 6.2 0 1 1 .2 5.1M4 3.5V8h4.5"/></svg></button>
+        <div class="walk-comparison"></div>
+      </li>
+      <li class="walk-step" data-detail="monitoring">
+        <div class="walk-label">
+          <span class="walk-marker" aria-hidden="true">03</span>
+          <h2 id="walk-monitoring" class="walk-title" tabindex="-1">Portfolio monitoring</h2>
+          <p class="walk-deck">Track results against budget and compare holdings with peers in your portfolio and deal flow.</p>
+        </div>
+        <div class="walk-scene" id="walk-record-monitoring" role="region" aria-labelledby="walk-monitoring">
+  <div class="walk-record">
+    <figure class="wr-peer">
+      <figcaption id="wr-peer-metric">Net revenue retention <span>FY26</span></figcaption>
+      <table aria-labelledby="wr-peer-metric">
+        <tbody>
+          <tr><th scope="row"><span class="wr-peer-name"><img width="20" height="20" src="assets/corvel-learning-mark.svg" alt="">Corvel Learning</span></th><td>98%</td></tr>
+          <tr><th scope="row">Sector top quartile</th><td>108%</td></tr>
+        </tbody>
+      </table>
+      <p class="wr-peer-finding"><strong>10 percentage points</strong> below the top quartile.</p>
+      <p class="wr-peer-loss"><strong>$1.2M</strong> of ARR lost across 41 customers.</p>
+    </figure>
+  </div>
+</div>
+        <details class="walk-extra"><summary>View the portfolio report</summary><div class="walk-evidence"></div></details>
+        <button type="button" class="walk-replay" aria-label="Replay portfolio monitoring example" title="Replay portfolio monitoring example" aria-controls="walk-record-monitoring"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 8a6.2 6.2 0 1 1 .2 5.1M4 3.5V8h4.5"/></svg></button>
+      </li>
+      <li class="walk-step" data-detail="value-creation">
+        <div class="walk-label">
+          <span class="walk-marker" aria-hidden="true">04</span>
+          <h2 id="walk-value" class="walk-title" tabindex="-1">Value creation</h2>
+          <p class="walk-deck">Find ways to grow revenue or reduce costs using results from your portfolio and deal flow.</p>
+        </div>
+        <div class="walk-scene" id="walk-record-value" role="region" aria-labelledby="walk-value">
+  <div class="walk-record">
+    <div class="wr-action">
+      <div class="wr-loss">
+        <p class="wr-account"><img src="assets/corvel-learning-mark.svg" width="27" height="27" alt="">Corvel Learning</p>
+        <p class="wr-pattern">The 41 customers Corvel lost had two consecutive quarters of low course usage.</p>
+      </div>
+      <div class="wr-recommend">
+        <p class="wr-caption">Recommended action</p>
+        <strong>Set up a two-person renewal desk.</strong>
+        <p>Flag accounts with the same pattern and contact buyers before renewal.</p>
+      </div>
+    </div>
+  </div>
+</div>
+        <details class="walk-extra"><summary>See Corvel’s renewal plan</summary><div class="walk-evidence"></div></details>
+        <button type="button" class="walk-replay" aria-label="Replay value creation example" title="Replay value creation example" aria-controls="walk-record-value"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 8a6.2 6.2 0 1 1 .2 5.1M4 3.5V8h4.5"/></svg></button>
+      </li></ol></section>
+
 <section class="sec s2" id="platform" aria-labelledby="h2">
   <div class="wrap">
     <div class="head">
@@ -1404,7 +1516,7 @@ h2 .soft { color:inherit; }
         <ol class="sourcing-prospects" role="list" aria-label="First three prospects by fit score, with invented data">
           <li>
             <details>
-              <summary><span class="prospect-identity"><img src="assets/keystone-inspection-mark.svg" width="24" height="24" alt="">Keystone Inspection Services</span><strong><span class="sr">Fit score </span>92<span aria-hidden="true">/100</span><span class="sr"> out of 100</span></strong></summary>
+              <summary><span class="prospect-identity"><img src="assets/keystone-inspection-mark.svg" data-mobile-src="assets/keystone-inspection-mobile.svg" width="24" height="24" alt="">Keystone Inspection Services</span><strong><span class="sr">Fit score </span>92<span aria-hidden="true">/100</span><span class="sr"> out of 100</span></strong></summary>
               <div class="prospect-evidence">
                 <p>Tests fire alarms and sprinklers in commercial buildings.</p>
                 <dl><dt>Strategic fit</dt><dd>Multi-year contracts cover annual inspections.</dd><dt>Concern</dt><dd>Two property managers account for a large share of revenue.</dd></dl>
@@ -1871,7 +1983,7 @@ h2 .soft { color:inherit; }
   if (document.fonts) document.fonts.ready.then(drawConnectors);
 })();
 </script>
-<script src="mobile-refinements.js?v=9"></script>
+<script src="mobile-refinements.js?v=10"></script>
 <dialog id="corvel-excerpt" class="source-note" aria-labelledby="corvel-doc">
   <div class="note-top">
     <p>Illustrative board pack excerpt</p>
@@ -1897,7 +2009,7 @@ h2 .soft { color:inherit; }
       <tr><td>D11</td><th scope="row">Subscriptions</th><td>44,350</td></tr>
       <tr><td>D12</td><th scope="row">Services</th><td>5,950</td></tr>
       <tr><td>D13</td><th scope="row">Other revenue</th><td>700</td></tr>
-      <tr><td>D14</td><th scope="row">Revenue</th><td>51,000</td></tr>
+      <tr><td>D14</td><th scope="row">Revenue</th><td class="source-cited-value">51,000</td></tr>
     </tbody>
   </table>
   <p class="workbook-total">Cell D14 reports $51.0M in FY26 revenue.</p>
@@ -1916,5 +2028,6 @@ document.querySelectorAll('button[data-excerpt]').forEach(button => {
   button.addEventListener('click', () => excerpt.showModal());
 });
 </script>
+<script src="mobile-stages.js"></script>
 </body>
 </html>
