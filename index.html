@@ -1244,6 +1244,7 @@ h2 .soft { color:inherit; }
 <link rel="stylesheet" href="evaluation-exhibit.css?v=2">
 <link rel="stylesheet" href="value-creation-exhibit.css?v=renewal-desk">
 <link rel="stylesheet" href="mobile-stages.css?v=corvel-source" media="(max-width:700px)">
+<link rel="stylesheet" href="evidence.css?v=906f725347">
 </head>
 <body>
 <a class="skip" href="#hero-title">Skip to content</a>
@@ -1251,8 +1252,11 @@ h2 .soft { color:inherit; }
 <header class="header dark site-header-bar" id="top">
   <a class="brand" href="#" aria-label="FirmCortex home"><img src="assets/asset-01.svg" alt=""><span>firm<strong>cortex</strong></span></a>
   <nav class="nav" id="nav" aria-label="Main navigation">
-    <a href="#platform">Platform</a>
-    <ul hidden class="walk-nav-stages" aria-label="Platform stages"><li><a href="#walk-sourcing">Sourcing</a></li><li><a href="#walk-evaluation">Prospect evaluation</a></li><li><a href="#walk-monitoring">Portfolio monitoring</a></li><li><a href="#walk-value">Value creation</a></li></ul>
+    <div class="platform-nav">
+      <a id="platform-link" href="#platform">Platform</a>
+      <button hidden class="navbtn" id="platform-toggle" type="button" aria-expanded="false" aria-controls="platform-stages">Platform</button>
+      <ul hidden class="walk-nav-stages" id="platform-stages" aria-label="Platform stages"><li><a href="#walk-sourcing" data-section="sourcing">Sourcing</a></li><li><a href="#walk-evaluation" data-section="evaluation">Prospect evaluation</a></li><li><a href="#walk-monitoring" data-section="monitoring">Portfolio monitoring</a></li><li><a href="#walk-value" data-section="value-creation">Value creation</a></li></ul>
+    </div>
     <button type="button" class="navbtn" id="login" aria-describedby="login-note">Log in</button>
   </nav>
   <a class="demo" href="#contact">Request demo</a>
@@ -1267,7 +1271,7 @@ h2 .soft { color:inherit; }
     <div class="copy">
       <p class="audience">For private markets investors</p>
       <h1 id="hero-title" tabindex="-1">One system for the full investment life cycle, and a clear view of what to prioritize.</h1>
-      <p class="sub">Sourcing, prospect evaluation, portfolio monitoring and value creation in one platform. What you learn at one stage sharpens every other, and your team sees what needs attention now.</p>
+      <p class="sub">See which prospects, deals and holdings need attention this week. Compare new deals with your portfolio and use those benchmarks to find ways to grow revenue or cut costs.</p>
     </div>
     <div class="heroR" id="heroR">
 <svg class="ov2" id="ov2" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"></svg>
@@ -1348,7 +1352,7 @@ h2 .soft { color:inherit; }
       <h2>Needs attention now</h2>
       <button type="button" class="pause m17p" id="m17p" aria-label="Pause the moving picture"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 0h3v10H1zM6 0h3v10H6z"/></svg></button>
       <ol>
-        <li class="card" id="card1" style="--sc:#6FAEF0" data-s="0"><span class="who"><i style="--c:var(--d0)"></i><b>Tarnwick Health</b> Sourcing</span><span class="why">Scores 91 of 100 against your criteria</span><a class="next" href="#sourcing-queue" data-sourcing-link>See why Tarnwick scored 91</a></li>
+        <li class="card" id="card1" style="--sc:#6FAEF0" data-s="0"><span class="who"><i style="--c:var(--d0)"></i><b>Tarnwick Health</b> Sourcing</span><span class="why">Scores 91 of 100 against your criteria</span><a class="next" href="#tarnwick-fit" data-sourcing-link>See why Tarnwick scored 91</a></li>
         <li class="card" id="card2" style="--sc:#D9A9C2" data-s="1"><span class="who"><i style="--c:var(--d1)"></i><b>Halden Fleet Systems</b> Prospect evaluation</span><span class="why">Red flag: $1.9M of FY26 EBITDA is one-time</span><a class="next" href="#evaluation">Review Halden’s diligence flags</a></li>
         <li class="card" id="card0" style="--sc:#6FCB9B" data-s="2" data-t="3"><span class="who"><i style="--c:var(--d2)"></i><b>Corvel Learning</b> Portfolio monitoring</span><span class="why">$1.2M of ARR lost across 41 customers in FY26</span><a class="next" href="#corvel-retention">Compare Corvel’s retention with its peers</a></li>
         <li class="card" id="card3" style="--sc:#E2C27E" data-s="3"><span class="who"><i style="--c:var(--d3)"></i><b>Corvel Learning</b> Value creation</span><span class="why">Contact low-usage accounts before renewal</span><a class="next" href="#corvel-renewal">Review Corvel’s renewal plan</a></li>
@@ -1369,19 +1373,10 @@ h2 .soft { color:inherit; }
   <div class="walk-record">
     <div class="wr-queue">
       <p class="wr-queue-head"><b>Screening queue</b><span>Fit score</span></p>
-      <ol class="wr-ranking" aria-label="Prospects ranked by fit score out of 100">
-        <li class="wr-first">
-          <img src="assets/keystone-inspection-mark.svg?v=keystone-k" width="26" height="26" alt="">
-          <strong>Keystone Inspection Services</strong><b>92</b>
-          <p class="wr-fit">Multi-year contracts cover annual inspections.</p>
-        </li>
-        <li><img src="assets/tarnwick-health-mark.svg" width="26" height="26" alt=""><strong>Tarnwick Health</strong><b>91</b></li>
-        <li><img src="assets/calder-vision-mark.svg" width="26" height="26" alt=""><strong>Calder Vision Systems</strong><b>88</b></li>
-      </ol>
     </div>
   </div>
 </div>
-        <details class="walk-extra"><summary>View the sourcing queue</summary><div class="walk-evidence"></div></details>
+        <details class="walk-extra"><summary>Market reports, outreach and add-ons</summary><div class="walk-evidence"></div></details>
         <button type="button" class="walk-replay" aria-label="Replay sourcing example" title="Replay sourcing example" aria-controls="walk-record-sourcing"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 8a6.2 6.2 0 1 1 .2 5.1M4 3.5V8h4.5"/></svg></button>
       </li>
       <li class="walk-step" data-detail="evaluation">
@@ -1407,17 +1402,23 @@ h2 .soft { color:inherit; }
       <dt>Marketed FY26 EBITDA</dt>
       <dd><strong>$16.2M</strong></dd>
     </dl>
-    <div class="hc-finding">
+    <details class="hc-adjustment">
+      <summary>
+      <span class="hc-finding">
       <svg class="hc-flag" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 17V3m0 1c2.2-1.1 3.7-.9 5.5-.2 1.9.8 3.2 1 5.8-.1v7.2c-2.4 1-4 .7-5.8 0-1.8-.8-3.2-1-5.5.1"/></svg>
-      <p><span class="hc-sr">Red flag. </span><strong>$1.9M</strong> of EBITDA is <span class="hc-keep">one-time.</span></p>
-    </div>
+      <span><span class="hc-sr">Red flag. </span><strong>$1.9M</strong> of EBITDA is <span class="hc-keep">one-time.</span></span>
+      </span>
+      <span class="hc-margin"><span class="margin-preview">Margin excluding this item</span><b class="margin-preview">28.0%</b><span class="margin-expanded">EBITDA margin calculation</span></span>
+      </summary>
+      <div class="mobile-basis"></div>
+    </details>
   </div>
 </div>
   </div>
 </div>
         <details class="walk-extra"><summary>Review Halden’s diligence flags</summary><div class="walk-evidence"></div></details>
         <button type="button" class="walk-replay" aria-label="Replay prospect evaluation example" title="Replay prospect evaluation example" aria-controls="walk-record-evaluation"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 8a6.2 6.2 0 1 1 .2 5.1M4 3.5V8h4.5"/></svg></button>
-        <div class="walk-comparison"></div>
+        <details class="walk-comparison"><summary>Compare Halden with your holdings</summary><div class="holdings-slot"></div></details>
       </li>
       <li class="walk-step" data-detail="monitoring">
         <div class="walk-label">
@@ -1432,7 +1433,7 @@ h2 .soft { color:inherit; }
       <table aria-labelledby="wr-peer-metric">
         <tbody>
           <tr><th scope="row"><span class="wr-peer-name"><img width="20" height="20" src="assets/corvel-learning-mark.svg" alt="">Corvel Learning</span></th><td>98%</td></tr>
-          <tr><th scope="row">Sector top quartile</th><td>108%</td></tr>
+          <tr><th scope="row">Comparable prospects and holdings<span class="peer-basis">Top quartile</span></th><td>108%</td></tr>
         </tbody>
       </table>
       <p class="wr-peer-finding"><strong>10 percentage points</strong> below the top quartile.</p>
@@ -1468,7 +1469,7 @@ h2 .soft { color:inherit; }
         <button type="button" class="walk-replay" aria-label="Replay value creation example" title="Replay value creation example" aria-controls="walk-record-value"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 8a6.2 6.2 0 1 1 .2 5.1M4 3.5V8h4.5"/></svg></button>
       </li></ol></section>
 
-<section class="sec s2" id="platform" aria-labelledby="h2">
+<section class="sec s2" id="platform" aria-labelledby="h2" tabindex="-1">
   <div class="wrap">
     <div class="head">
       <h2 id="h2">Compare a new deal with the companies you already own.</h2>
@@ -1491,6 +1492,7 @@ h2 .soft { color:inherit; }
           </table>
         </div>
       </figure>
+      <a class="check-basis" href="#halden-basis">Check Halden’s EBITDA margin <span aria-hidden="true">↓</span></a>
     </div>
   </div>
 </section>
@@ -1504,12 +1506,15 @@ h2 .soft { color:inherit; }
     <div class="panel q4">
 
       <div id="sourcing-queue" role="group" aria-label="Prospects ranked by fit score" tabindex="-1">
-      <img class="crop q4wide" src="assets/asset-03.png?v=keystone-k" width="1033" height="565" alt="Description, Strategic Fit and Concerns for three illustrative prospects. Keystone Inspection Services, 92 out of 100. Tests fire alarms and sprinklers in commercial buildings. Multi-year contracts cover annual inspections. Two property managers account for a large share of revenue. Tarnwick Health, 91 out of 100. Sells scheduling and visit-verification software to home health agencies. Agencies use its visit logs every shift to meet state requirements. Most customers are in three states. Calder Vision Systems, 88 out of 100. Sells cameras and software that catch labeling errors on food packaging lines. Plants can install the system on existing lines without replacing their packaging equipment. One supplier makes the image sensor used in every camera.">
+      <div class="queue-sheet">
+        <img class="crop q4wide" src="assets/asset-03.png?v=keystone-k" width="1033" height="565" alt="Description, Strategic Fit and Concerns for three illustrative prospects. Keystone Inspection Services, 92 out of 100. Tests fire alarms and sprinklers in commercial buildings. Multi-year contracts cover annual inspections. Two property managers account for a large share of revenue. Tarnwick Health, 91 out of 100. Sells scheduling and visit-verification software to home health agencies. Agencies use its visit logs every shift to meet state requirements. Most customers are in three states. Calder Vision Systems, 88 out of 100. Sells cameras and software that catch labeling errors on food packaging lines. Plants can install the system on existing lines without replacing their packaging equipment. One supplier makes the image sensor used in every camera.">
+        <div hidden id="tarnwick-row" role="group" tabindex="-1" aria-label="Tarnwick Health, fit score 91. Agencies use its visit logs every shift to meet state requirements. Most customers are in three states."></div>
+      </div>
       <div class="q4narrow">
         <ol class="sourcing-prospects" role="list" aria-label="First three prospects by fit score, with invented data">
           <li>
             <details>
-              <summary><span class="prospect-identity"><img src="assets/keystone-inspection-mark.svg?v=keystone-k" width="24" height="24" alt="">Keystone Inspection Services</span><strong><span class="sr">Fit score </span>92<span aria-hidden="true">/100</span><span class="sr"> out of 100</span></strong></summary>
+              <summary id="keystone-fit"><span class="prospect-identity"><img src="assets/keystone-inspection-mark.svg?v=keystone-k" width="24" height="24" alt="">Keystone Inspection Services</span><strong><span class="sr">Fit score </span>92<span aria-hidden="true">/100</span><span class="sr"> out of 100</span></strong><span class="featured-fit" hidden>Multi-year contracts cover annual inspections.</span></summary>
               <div class="prospect-evidence">
                 <p>Tests fire alarms and sprinklers in commercial buildings.</p>
                 <dl><dt>Strategic fit</dt><dd>Multi-year contracts cover annual inspections.</dd><dt>Concern</dt><dd>Two property managers account for a large share of revenue.</dd></dl>
@@ -1517,7 +1522,7 @@ h2 .soft { color:inherit; }
             </details>
           </li>
           <li>
-            <details open>
+            <details>
               <summary id="tarnwick-fit"><span class="prospect-identity"><img src="assets/tarnwick-health-mark.svg" width="24" height="24" alt="">Tarnwick Health</span><strong><span class="sr">Fit score </span>91<span aria-hidden="true">/100</span><span class="sr"> out of 100</span></strong></summary>
               <div class="prospect-evidence">
                 <p>Sells scheduling and visit-verification software to home health agencies.</p>
@@ -1585,6 +1590,13 @@ h2 .soft { color:inherit; }
           <p>Its closest rival has just been acquired.</p>
           <p class="memo-heading">Key risks</p>
           <p class="memo-risk" id="m-fin"><i class="diligence-flag"></i>Red flag: $1.9M of FY26 EBITDA is one-time</p>
+          <table id="halden-basis" class="basis-table" tabindex="-1" aria-label="Halden Fleet Systems FY26 EBITDA and margin, as marketed and excluding the one-time item, on $51.0M of revenue">
+            <thead><tr><th scope="col">FY26 basis</th><th scope="col">EBITDA</th><th scope="col">Margin</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">As marketed</th><td>$16.2M</td><td>31.8%</td></tr>
+              <tr><th scope="row">Excluding this item</th><td>$14.3M</td><td>28.0%</td></tr>
+            </tbody>
+          </table>
           <p class="memo-risk" id="m-tech"><i class="diligence-flag"></i>Red flag: aging work-order platform</p>
         </div>
       </figure>
@@ -1657,7 +1669,7 @@ h2 .soft { color:inherit; }
           </div>
         </div>
         <figcaption class="m6n">
-          <span>Corvel’s net revenue retention was 98%. The top quartile starts at 108%.</span>
+          <span>Corvel’s net revenue retention was 98%. Among comparable prospects and holdings in your firm’s records, the top quartile starts at 108%.</span>
           <a class="plan-link" href="#corvel-renewal">Why a renewal desk for Corvel?<span aria-hidden="true"> ↓</span></a>
         </figcaption>
       </figure>
@@ -1720,7 +1732,7 @@ h2 .soft { color:inherit; }
     </div>
     <div class="src2">
       <figure class="chg9">
-        <img class="crop" src="assets/asset-09.png?v=fleet-systems" width="470" height="323" alt="What changed feed with illustrative data. A strategic buyer acquired Halden Fleet Systems’ closest fleet software rival. Halden reported $51.0M revenue and $16.2M EBITDA in FY26. Other rows cover Corvel Learning, the Fire Safety Inspection Market Study and Aldergate Services.">
+        <img class="crop" src="assets/asset-09.png?v=fleet-systems" width="470" height="323" alt="Halden Fleet Systems reported FY26 revenue of $51.0M and EBITDA of $16.2M.">
         <button type="button" class="halden-feed-source" data-excerpt="halden-excerpt" aria-haspopup="dialog" aria-label="View source for Halden Fleet Systems’ FY26 revenue"></button>
       </figure>
       <img class="link9" src="assets/verification-connector.svg" width="80" height="20" alt="" aria-hidden="true">
@@ -1736,7 +1748,7 @@ h2 .soft { color:inherit; }
   <div class="wrap g12">
     <div class="words">
       <h2 id="h9">See FirmCortex for yourself.</h2>
-      <p class="body">Tell us what your firm invests in. We will reply personally to arrange a demo.</p>
+      <p class="body">Choose a screened prospect, an investment memo or a portfolio action to explore in your demo.</p>
       <ul class="trust">
       <li><b>Your firm’s own data.</b><span>Comparisons and benchmarks are built from what your firm has added. FirmCortex can incorporate data your firm has or subscribes to.</span></li>
       <li><b>Start with what you have.</b><span>A pipeline list, a board pack or a data room is enough to begin. The comparisons get sharper as you add more.</span></li>
@@ -1744,12 +1756,12 @@ h2 .soft { color:inherit; }
       </ul>
     </div>
     <form class="form" id="form" novalidate>
+      <p class="note" id="form-note" role="status">Design preview. No message will be sent.</p>
       <label>Name<input type="text" name="name" autocomplete="name"></label>
       <label>Work email<input type="email" name="email" autocomplete="email"></label>
       <label>Firm<input type="text" name="firm" autocomplete="organization"></label>
-      <label>Your investment focus<textarea name="focus"></textarea></label>
+      <label>What would you like to see? (optional)<textarea name="focus"></textarea></label>
       <button type="submit">Request demo</button>
-      <p class="note" id="form-note" role="status">Design preview. No message will be sent.</p>
       <p class="policy-note"><a href="privacy.html">Privacy policy (draft)</a></p>
     </form>
   </div>
@@ -1974,9 +1986,20 @@ h2 .soft { color:inherit; }
   if (window.ResizeObserver) new ResizeObserver(drawConnectors).observe(file);
   else window.addEventListener('resize', drawConnectors);
   if (document.fonts) document.fonts.ready.then(drawConnectors);
+  if (window.IntersectionObserver && !heroStill()) {
+    const observer = new IntersectionObserver(entries => {
+      if (!entries.some(entry => entry.isIntersecting) || !connectors.getBoundingClientRect().width) return;
+      file.classList.add('show-financial-flag');
+      observer.disconnect();
+    }, {threshold:.35});
+    observer.observe(file);
+  }
+  function heroStill() {
+    return document.getElementById('hero').classList.contains('still') || matchMedia('(prefers-reduced-motion:reduce)').matches;
+  }
 })();
 </script>
-<script src="mobile-refinements.js?v=10"></script>
+<script src="mobile-refinements.js?v=7c164daac4"></script>
 <dialog id="corvel-excerpt" class="source-note" aria-labelledby="corvel-doc">
   <div class="note-top">
     <p>Illustrative board pack excerpt</p>
@@ -2021,6 +2044,6 @@ document.querySelectorAll('button[data-excerpt]').forEach(button => {
   button.addEventListener('click', () => excerpt.showModal());
 });
 </script>
-<script src="mobile-stages.js?v=corvel-source"></script>
+<script src="mobile-stages.js?v=c7a88894e7"></script>
 </body>
 </html>

@@ -44,37 +44,3 @@
   if (mobile.addEventListener) mobile.addEventListener('change', apply);
   else mobile.addListener(apply);
 })();
-
-(function () {
-  'use strict';
-  const link = document.querySelector('[data-sourcing-link]');
-  const queue = document.getElementById('sourcing-queue');
-  const summary = document.getElementById('tarnwick-fit');
-  const details = summary.closest('details');
-  const narrow = window.matchMedia('(max-width: 860px)');
-
-  function updateLink() {
-    link.hash = narrow.matches ? summary.id : queue.id;
-  }
-
-  function followFragment() {
-    if (location.hash !== '#' + summary.id && location.hash !== '#' + queue.id) return;
-    if (narrow.matches) details.open = true;
-    // A shared link may have been copied at the other viewport size.
-    const target = narrow.matches ? summary : queue;
-    if (location.hash !== '#' + target.id) {
-      target.focus({ preventScroll: true });
-      target.scrollIntoView();
-    }
-  }
-
-  updateLink();
-  narrow.addEventListener('change', updateLink);
-  link.addEventListener('click', function () {
-    // A repeated visit to the same fragment does not fire hashchange.
-    if (narrow.matches) details.open = true;
-  });
-  window.addEventListener('hashchange', followFragment);
-  if (document.readyState === 'complete') followFragment();
-  else window.addEventListener('load', followFragment, { once: true });
-})();

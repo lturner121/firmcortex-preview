@@ -6,8 +6,13 @@
   const walk = document.getElementById('investment-stages');
   const steps = [...walk.querySelectorAll('.walk-step')];
   const scenes = steps.map(step => step.querySelector('.walk-scene'));
-  const nav = document.querySelector('#nav .walk-nav-stages');
-  const platformLink = document.querySelector('#nav a[href="#platform"]');
+  const nav = document.getElementById('platform-stages');
+  const platformLink = document.getElementById('platform-link');
+  const platformToggle = document.getElementById('platform-toggle');
+  const compactNav = matchMedia('(max-width:760px)');
+  const compactQueue = matchMedia('(max-width:860px)');
+  const queue = document.querySelector('.sourcing-prospects');
+  const rowMarker = document.getElementById('tarnwick-row');
   const comparison = document.getElementById('platform');
   const desktopTitle = comparison.querySelector('h2');
   const mobileTitle = document.createElement('h3');
@@ -23,7 +28,24 @@
   const exhibits = steps.map(step =>
     remember(document.getElementById(step.dataset.detail), step.querySelector('.walk-evidence'))
   );
-  exhibits.push(remember(comparison, walk.querySelector('.walk-comparison')));
+  exhibits.push(remember(comparison, walk.querySelector('.holdings-slot')));
+  exhibits.push(remember(queue, walk.querySelector('.wr-queue')));
+  exhibits.push(remember(document.getElementById('halden-basis'), walk.querySelector('.mobile-basis')));
+  const plan = document.querySelector('.vc-plan');
+  const otherActions = document.createElement('details');
+  otherActions.className = 'other-actions';
+  const actionSummary = document.createElement('summary');
+  actionSummary.textContent = 'Other ranked actions';
+  const otherList = document.createElement('ol');
+  otherList.setAttribute('aria-label','Other ranked actions');
+  otherActions.append(actionSummary, otherList);
+  plan.after(otherActions);
+  otherActions.hidden = true;
+  for (const [index, action] of [...plan.children].entries()) {
+    action.value = index + 1;
+    action.setAttribute('aria-label', 'Rank ' + action.value + ' of 3');
+    if (action.classList.contains('vc-simple')) exhibits.push(remember(action, otherList));
+  }
 
   const headline = document.getElementById('hero-title');
   const introduction = document.querySelector('#hero .copy > .sub');
@@ -39,6 +61,40 @@
   let mobileLayout = false;
   let railFrame = 0;
   let workbookResized = false;
+
+  function setMenu(open) {
+    platformToggle.setAttribute('aria-expanded', String(open));
+    nav.hidden = !compactNav.matches && !open;
+  }
+  function syncNav() {
+    platformLink.hidden = !compactNav.matches;
+    platformToggle.hidden = compactNav.matches;
+    platformLink.hash = phone.matches ? 'investment-stages' : 'platform';
+    for (const link of nav.querySelectorAll('a')) {
+      const step = steps.find(item => item.dataset.detail === link.dataset.section);
+      link.hash = phone.matches ? step.querySelector('.walk-title').id : link.dataset.section;
+    }
+    setMenu(false);
+  }
+  const navGroup = platformToggle.parentElement;
+  platformToggle.addEventListener('click', () => setMenu(nav.hidden));
+  document.addEventListener('click', event => {
+    if (!compactNav.matches && (!navGroup.contains(event.target) || event.target.closest('a'))) setMenu(false);
+  });
+  navGroup.addEventListener('focusout', event => {
+    if (event.relatedTarget && !navGroup.contains(event.relatedTarget)) setMenu(false);
+  });
+  navGroup.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !compactNav.matches && !nav.hidden) {
+      setMenu(false);
+      platformToggle.focus();
+    }
+  });
+  for (const step of steps) {
+    document.getElementById(step.dataset.detail).setAttribute('tabindex','-1');
+  }
+  compactNav.addEventListener('change',syncNav);
+  syncNav();
 
   function updateRail() {
     railFrame = 0;
@@ -57,22 +113,26 @@
     if (mobileLayout && !railFrame) railFrame = requestAnimationFrame(updateRail);
   }
   function revealFragment() {
-    if (!location.hash) return;
-    let target = document.getElementById(location.hash.slice(1));
+    const id = location.hash.slice(1);
+    const tarnwick = ['tarnwick-fit','tarnwick-row','sourcing-queue'].includes(id);
+    rowMarker.hidden = !tarnwick || compactQueue.matches;
+    let target = document.getElementById(id);
     if (!target) return;
     const sourceLink = verification.contains(target);
-    if (!mobileLayout && !sourceLink) {
-      if (!walk.contains(target)) return;
+    if (tarnwick) {
+      target = compactQueue.matches ? document.getElementById('tarnwick-fit') : rowMarker;
+    } else if (!mobileLayout && walk.contains(target)) {
       const step = target.closest('.walk-step');
       target = step ? document.getElementById(step.dataset.detail) : comparison;
-    } else if (mobileLayout) {
-      if (sourceLink) target = revenueSource;
-      for (let parent = target.parentElement; parent; parent = parent.parentElement) {
-        if (parent instanceof HTMLDetailsElement) parent.open = true;
-      }
-      if (sourceLink) target.focus({preventScroll:true});
     }
-    const block = mobileLayout && sourceLink ? 'center' : 'start';
+    if (mobileLayout && sourceLink) target = revenueSource;
+    for (let parent = target.parentElement; parent; parent = parent.parentElement) {
+      if (parent instanceof HTMLDetailsElement) parent.open = true;
+    }
+    if (target.hasAttribute('tabindex') || tarnwick || (mobileLayout && sourceLink)) {
+      target.focus({preventScroll:true});
+    }
+    const block = (tarnwick && !compactQueue.matches) || (mobileLayout && sourceLink) ? 'center' : 'start';
     requestAnimationFrame(() => target.scrollIntoView({block, behavior:'instant'}));
   }
 
@@ -94,11 +154,13 @@
     if (phone.matches === mobileLayout) return;
     mobileLayout = phone.matches;
     document.documentElement.classList.toggle('mobile-stages-ready', mobileLayout);
-    walk.hidden = nav.hidden = !mobileLayout;
+    walk.hidden = !mobileLayout;
+    otherActions.hidden = !mobileLayout;
+    queue.querySelector('.featured-fit').hidden = !mobileLayout;
     verification.hidden = revenueText.hidden = mobileLayout;
     revenueSource.hidden = !mobileLayout;
     if (workbook.open) workbookResized = true;
-    platformLink.hash = mobileLayout ? 'investment-stages' : 'platform';
+    syncNav();
     exhibits.forEach(({section, slot, marker}) => {
       if (mobileLayout) slot.append(section);
       else marker.after(section);
@@ -142,6 +204,7 @@
     if (link?.hash && link.hash === location.hash) revealFragment();
   });
   phone.addEventListener('change', layout);
+  compactQueue.addEventListener('change', revealFragment);
   reducedMotion.addEventListener('change', syncMotion);
   workbook.addEventListener('close', () => {
     if (!workbookResized) return;
