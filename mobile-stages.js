@@ -12,7 +12,7 @@
   const compactNav = matchMedia('(max-width:760px)');
   const compactQueue = matchMedia('(max-width:860px)');
   const queue = document.querySelector('.sourcing-prospects');
-  const rowMarker = document.getElementById('tarnwick-row');
+  const queueRows = [...document.querySelectorAll('.queue-sheet [data-fit]')];
   const comparison = document.getElementById('platform');
   const desktopTitle = comparison.querySelector('h2');
   const mobileTitle = document.createElement('h3');
@@ -114,13 +114,14 @@
   }
   function revealFragment() {
     const id = location.hash.slice(1);
-    const tarnwick = ['tarnwick-fit','tarnwick-row','sourcing-queue'].includes(id);
-    rowMarker.hidden = !tarnwick || compactQueue.matches;
+    const queueId = id === 'sourcing-queue' ? 'tarnwick-fit' : id;
+    const row = queueRows.find(item => item.id === queueId || item.dataset.fit === queueId);
+    for (const item of queueRows) item.hidden = item !== row || compactQueue.matches;
     let target = document.getElementById(id);
     if (!target) return;
     const sourceLink = verification.contains(target);
-    if (tarnwick) {
-      target = compactQueue.matches ? document.getElementById('tarnwick-fit') : rowMarker;
+    if (row) {
+      target = compactQueue.matches ? document.getElementById(row.dataset.fit) : row;
     } else if (!mobileLayout && walk.contains(target)) {
       const step = target.closest('.walk-step');
       target = step ? document.getElementById(step.dataset.detail) : comparison;
@@ -129,10 +130,10 @@
     for (let parent = target.parentElement; parent; parent = parent.parentElement) {
       if (parent instanceof HTMLDetailsElement) parent.open = true;
     }
-    if (target.hasAttribute('tabindex') || tarnwick || (mobileLayout && sourceLink)) {
+    if (target.hasAttribute('tabindex') || row || (mobileLayout && sourceLink)) {
       target.focus({preventScroll:true});
     }
-    const block = (tarnwick && !compactQueue.matches) || (mobileLayout && sourceLink) ? 'center' : 'start';
+    const block = (row && !compactQueue.matches) || (mobileLayout && sourceLink) ? 'center' : 'start';
     requestAnimationFrame(() => target.scrollIntoView({block, behavior:'instant'}));
   }
 

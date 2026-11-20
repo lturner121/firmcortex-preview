@@ -26,10 +26,11 @@
 }
 
 #sourcing .queue-sheet { position:relative; max-width:1033px; margin-inline:auto; }
-#tarnwick-row {
+#keystone-row, #tarnwick-row {
   position:absolute; inset:39.65% 0 auto; height:30.1%; pointer-events:none;
   border:1px solid #77a0c7; border-left:4px solid #1870cb; outline:none;
 }
+#keystone-row { top: 9.38%; height: 30.27%; }
 @media (max-width:860px) { #sourcing .queue-sheet { display:none; } }
 
 .basis-table {
