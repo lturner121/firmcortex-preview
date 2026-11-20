@@ -1243,7 +1243,7 @@ h2 .soft { color:inherit; }
 <link rel="stylesheet" href="investment-exhibits.css?v=6">
 <link rel="stylesheet" href="evaluation-exhibit.css?v=2">
 <link rel="stylesheet" href="value-creation-exhibit.css?v=renewal-desk">
-<link rel="stylesheet" href="mobile-stages.css" media="(max-width:700px)">
+<link rel="stylesheet" href="mobile-stages.css?v=corvel-source" media="(max-width:700px)">
 </head>
 <body>
 <a class="skip" href="#hero-title">Skip to content</a>
@@ -1578,7 +1578,7 @@ h2 .soft { color:inherit; }
         <div class="diligence-memo">
           <p class="memo-title"><b>IC Synthesis</b><span>Halden Fleet Systems, draft</span></p>
           <p class="memo-heading">Executive summary</p>
-          <p>Fleet maintenance software for commercial operators. FY26 revenue $51.0M, EBITDA $16.2M.</p>
+          <p>Fleet maintenance software for commercial operators. FY26 revenue <span id="halden-revenue-text">$51.0M</span><button id="halden-revenue-source" hidden type="button" data-excerpt="halden-excerpt" aria-haspopup="dialog" aria-controls="halden-excerpt" aria-label="View the workbook source for Halden’s $51.0M FY26 revenue">$51.0M</button>, EBITDA $16.2M.</p>
           <p class="memo-heading">Financial analysis</p>
           <p>Revenue growth 18.5%, EBITDA margin 31.8%.</p>
           <p class="memo-heading">Market &amp; competition</p>
@@ -2021,6 +2021,6 @@ document.querySelectorAll('button[data-excerpt]').forEach(button => {
   button.addEventListener('click', () => excerpt.showModal());
 });
 </script>
-<script src="mobile-stages.js?v=keystone-k"></script>
+<script src="mobile-stages.js?v=corvel-source"></script>
 </body>
 </html>

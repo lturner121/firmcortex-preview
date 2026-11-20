@@ -32,9 +32,13 @@
   const renewalTitle = document.querySelector('#corvel-renewal .vc-renewal-card h3');
   const renewalText = renewalTitle.textContent;
   const verification = document.getElementById('verification');
+  const revenueText = document.getElementById('halden-revenue-text');
+  const revenueSource = document.getElementById('halden-revenue-source');
+  const workbook = document.getElementById('halden-excerpt');
   const still = new URLSearchParams(location.search).get('still') === '1';
   let mobileLayout = false;
   let railFrame = 0;
+  let workbookResized = false;
 
   function updateRail() {
     railFrame = 0;
@@ -56,17 +60,20 @@
     if (!location.hash) return;
     let target = document.getElementById(location.hash.slice(1));
     if (!target) return;
-    if (!mobileLayout) {
-      if (!walk.contains(target) && target !== walk) return;
+    const sourceLink = verification.contains(target);
+    if (!mobileLayout && !sourceLink) {
+      if (!walk.contains(target)) return;
       const step = target.closest('.walk-step');
       target = step ? document.getElementById(step.dataset.detail) : comparison;
-    } else {
-      if (target === verification) verification.querySelector('.citation button').focus({preventScroll:true});
+    } else if (mobileLayout) {
+      if (sourceLink) target = revenueSource;
       for (let parent = target.parentElement; parent; parent = parent.parentElement) {
         if (parent instanceof HTMLDetailsElement) parent.open = true;
       }
+      if (sourceLink) target.focus({preventScroll:true});
     }
-    requestAnimationFrame(() => target.scrollIntoView({block:'start', behavior:'instant'}));
+    const block = mobileLayout && sourceLink ? 'center' : 'start';
+    requestAnimationFrame(() => target.scrollIntoView({block, behavior:'instant'}));
   }
 
   const observer = window.IntersectionObserver && new IntersectionObserver(entries => {
@@ -88,6 +95,9 @@
     mobileLayout = phone.matches;
     document.documentElement.classList.toggle('mobile-stages-ready', mobileLayout);
     walk.hidden = nav.hidden = !mobileLayout;
+    verification.hidden = revenueText.hidden = mobileLayout;
+    revenueSource.hidden = !mobileLayout;
+    if (workbook.open) workbookResized = true;
     platformLink.hash = mobileLayout ? 'investment-stages' : 'platform';
     exhibits.forEach(({section, slot, marker}) => {
       if (mobileLayout) slot.append(section);
@@ -133,5 +143,12 @@
   });
   phone.addEventListener('change', layout);
   reducedMotion.addEventListener('change', syncMotion);
+  workbook.addEventListener('close', () => {
+    if (!workbookResized) return;
+    workbookResized = false;
+    if (mobileLayout) revenueSource.closest('.walk-extra').open = true;
+    const trigger = mobileLayout ? revenueSource : verification.querySelector('.citation button');
+    trigger.focus();
+  });
   layout();
 })();
