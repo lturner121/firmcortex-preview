@@ -1111,6 +1111,56 @@ h2 .soft { color:inherit; }
   .heroR #card3 .why { white-space:nowrap; }
 }
 
+/* Desktop attention board */
+@media (min-width: 1101px) {
+  #heroR .few h2 {
+    margin-left:20px; font-size:16px; line-height:20px; font-weight:620; letter-spacing:-.025em;
+  }
+  #heroR .few .card:nth-child(n) .why {
+    font-size:18px; line-height:24px; letter-spacing:-.025em; font-weight:650;
+  }
+  #heroR .few .card a.next { color:#233c54; }
+  #heroR .few .card:hover a.next, #heroR .few .card:focus-within a.next,
+  #heroR.cy .few .card.on a.next { color:#155b95; }
+  #heroR .m17p { width:34px; height:34px; top:-7px; right:2px; color:#e6d8e0; }
+  #heroR .m17p svg { width:10px; height:10px; }
+  #heroR .bl2 {
+    background:transparent; box-shadow:none; border:0; padding:0 0 0 6px; gap:8px;
+    font-size:14px; font-weight:620; letter-spacing:-.018em;
+  }
+  #heroR .bl2 i { width:7px; height:7px; border-radius:2px; }
+  #heroR.cy:not(.all) .bl2 { opacity:.83; }
+  #heroR.cy:not(.all) .bl2.on { opacity:1; }
+  #heroR.cy:not(.all) .few .card:nth-child(n) {
+    background:white; box-shadow:0 6px 16px rgb(8 2 5 / 23%);
+    transition:box-shadow .2s ease-out, transform .15s ease-out;
+  }
+  #heroR.cy:not(.all) .few .card:nth-child(n).on { box-shadow:inset 0 0 0 1px var(--sc), 0 9px 22px rgb(8 2 5 / 38%); }
+  #heroR .card::after {
+    content:""; position:absolute; right:0; top:calc(50% - 19px);
+    width:3px; height:38px; background:var(--sc); border-radius:3px 0 0 3px;
+    opacity:0; pointer-events:none;
+  }
+  #heroR.cy:not(.all) .card.on::after { opacity:1; }
+  #heroR .lt .halo { stroke-width:5px; }
+  #heroR.cy:not(.all) .lt.on .halo { animation:none; stroke-opacity:.36; }
+  #heroR.cy:not(.all) .th.on path { animation-duration:.56s; animation-delay:.04s; }
+  #heroR.cy:not(.all) .th.on .end { animation-duration:.14s; animation-delay:.51s; }
+  #heroR.cy.hold:not(.all) .th.on path { animation-duration:.25s; animation-delay:0s; }
+  #heroR.cy.hold:not(.all) .th.on .end { animation-delay:.2s; }
+}
+@media (min-width:1101px) and (prefers-reduced-motion:no-preference) {
+  #heroR .card::after { transition:opacity .15s ease-out; }
+  #heroR.cy:not(.all) .card.on::after { transition-delay:.48s; }
+  #heroR.cy.hold:not(.all) .card.on::after { transition-delay:.17s; }
+}
+@media (min-width:1240px) and (forced-colors:none) {
+  #heroR .who .card-stage { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+}
+@media (min-width:1101px) and (forced-colors:active) {
+  #heroR.cy:not(.all) .few .card.on { outline:2px solid Highlight; outline-offset:1px; }
+}
+
 /* OPTION E — selected by owner. All styles are local to value creation. */
 #value-creation * {box-sizing:border-box}
 #value-creation {margin:0;background:white;color:var(--ink);font-family:Inter,Arial,sans-serif;-webkit-font-smoothing:antialiased}
@@ -1349,13 +1399,29 @@ h2 .soft { color:inherit; }
 </g></svg><i class="mk" data-card="card1" data-col="#6FAEF0" style="left:672.0px;top:528.4px"></i><i class="mk" data-label="bl-s" style="left:687.4px;top:387.7px"></i><i class="mk" data-card="card2" data-col="#D9A9C2" style="left:624.0px;top:873.4px"></i><i class="mk" data-label="bl-e" style="left:636.9px;top:758.0px"></i><i class="mk" data-card="card0" data-col="#6FCB9B" style="left:568.0px;top:1208.7px"></i><i class="mk" data-label="bl-m" style="left:578.5px;top:1118.5px"></i><i class="mk" data-card="card3" data-col="#E2C27E" style="left:520.0px;top:1482.7px"></i><i class="mk" data-label="bl-v" style="left:528.7px;top:1412.4px"></i></div><span class="bl2" id="bl-s" data-i="card1" style="--c:#6FAEF0"><i></i>Sourcing</span><span class="bl2" id="bl-e" data-i="card2" style="--c:#D9A9C2"><i></i>Prospect evaluation</span><span class="bl2" id="bl-m" data-i="card0" style="--c:#6FCB9B"><i></i>Portfolio monitoring</span><span class="bl2" id="bl-v" data-i="card3" style="--c:#E2C27E"><i></i>Value creation</span></div>
     <div class="few" id="few">
       <p class="sr">Four items need attention this week, one at each stage of the investment process.</p>
-      <h2>Needs attention now</h2>
+      <h2>Needs attention</h2>
       <button type="button" class="pause m17p" id="m17p" aria-label="Pause the moving picture"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 0h3v10H1zM6 0h3v10H6z"/></svg></button>
       <ol>
-        <li class="card" id="card1" style="--sc:#6FAEF0" data-s="0"><span class="who"><i style="--c:var(--d0)"></i><b>Tarnwick Health</b> Sourcing</span><span class="why">Scores 91 of 100 against your criteria</span><a class="next" href="#tarnwick-fit" data-sourcing-link>See why Tarnwick scored 91</a></li>
-        <li class="card" id="card2" style="--sc:#D9A9C2" data-s="1"><span class="who"><i style="--c:var(--d1)"></i><b>Halden Fleet Systems</b> Prospect evaluation</span><span class="why">Red flag: $1.9M of FY26 EBITDA is one-time</span><a class="next" href="#evaluation">Review Halden’s diligence flags</a></li>
-        <li class="card" id="card0" style="--sc:#6FCB9B" data-s="2" data-t="3"><span class="who"><i style="--c:var(--d2)"></i><b>Corvel Learning</b> Portfolio monitoring</span><span class="why">$1.2M of ARR lost across 41 customers in FY26</span><a class="next" href="#corvel-retention">Compare Corvel’s retention with its peers</a></li>
-        <li class="card" id="card3" style="--sc:#E2C27E" data-s="3"><span class="who"><i style="--c:var(--d3)"></i><b>Corvel Learning</b> Value creation</span><span class="why">Contact low-usage accounts before renewal</span><a class="next" href="#corvel-renewal">Review Corvel’s renewal plan</a></li>
+        <li class="card" id="card1" style="--sc:#6FAEF0" data-s="0">
+          <span class="who"><i style="--c:var(--d0)"></i><b>Tarnwick Health</b> <span class="card-stage">Sourcing</span></span>
+          <span class="why">Scored 91/100 against your criteria</span>
+          <a class="next" href="#tarnwick-fit" data-sourcing-link>Review fit and risk<span class="sr"> for Tarnwick Health</span></a>
+        </li>
+        <li class="card" id="card2" style="--sc:#D9A9C2" data-s="1">
+          <span class="who"><i style="--c:var(--d1)"></i><b>Halden Fleet Systems</b> <span class="card-stage">Prospect evaluation</span></span>
+          <span class="why">$1.9M of FY26 EBITDA is one-time</span>
+          <a class="next" href="#evaluation">Review Halden’s diligence flags</a>
+        </li>
+        <li class="card" id="card0" style="--sc:#6FCB9B" data-s="2" data-t="3">
+          <span class="who"><i style="--c:var(--d2)"></i><b>Corvel Learning</b> <span class="card-stage">Portfolio monitoring</span></span>
+          <span class="why">Lost 41 customers and $1.2M of ARR in FY26</span>
+          <a class="next" href="#corvel-retention">Compare Corvel’s retention with its peers</a>
+        </li>
+        <li class="card" id="card3" style="--sc:#E2C27E" data-s="3">
+          <span class="who"><i style="--c:var(--d3)"></i><b>Corvel Learning</b> <span class="card-stage">Value creation</span></span>
+          <span class="why">Contact low-usage accounts before renewal</span>
+          <a class="next" href="#corvel-renewal">Review Corvel’s renewal plan</a>
+        </li>
       </ol>
     </div>
     </div>
