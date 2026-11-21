@@ -49,8 +49,6 @@
   const desktopIntro = introduction.textContent;
   const renewalTitle = document.querySelector('#corvel-renewal .vc-renewal-card h3');
   const renewalText = renewalTitle.textContent;
-  const verification = document.getElementById('verification');
-  const revenueText = document.getElementById('halden-revenue-text');
   const revenueSource = document.getElementById('halden-revenue-source');
   const workbook = document.getElementById('halden-excerpt');
   const still = new URLSearchParams(location.search).get('still') === '1';
@@ -113,23 +111,23 @@
     const queueId = id === 'sourcing-queue' ? 'tarnwick-fit' : id;
     const row = queueRows.find(item => item.id === queueId || item.dataset.fit === queueId);
     for (const item of queueRows) item.hidden = item !== row || compactQueue.matches;
-    let target = document.getElementById(id);
+    // Existing links to the former source section now open the memo at its citation.
+    const sourceLink = [revenueSource.id, 'verification', 'h8', 'halden-revenue-text'].includes(id);
+    let target = sourceLink ? revenueSource : document.getElementById(id);
     if (!target) return;
-    const sourceLink = verification.contains(target);
     if (row) {
       target = compactQueue.matches ? document.getElementById(row.dataset.fit) : row;
     } else if (!mobileLayout && walk.contains(target)) {
       const step = target.closest('.walk-step') || steps[0];
       target = document.getElementById(step.dataset.detail);
     }
-    if (mobileLayout && sourceLink) target = revenueSource;
     for (let parent = target.parentElement; parent; parent = parent.parentElement) {
       if (parent instanceof HTMLDetailsElement) parent.open = true;
     }
-    if (target.hasAttribute('tabindex') || row || (mobileLayout && sourceLink)) {
+    if (target.hasAttribute('tabindex') || row || sourceLink) {
       target.focus({preventScroll:true});
     }
-    const block = (row && !compactQueue.matches) || (mobileLayout && sourceLink) ? 'center' : 'start';
+    const block = (row && !compactQueue.matches) || sourceLink ? 'center' : 'start';
     requestAnimationFrame(() => target.scrollIntoView({block, behavior:'instant'}));
   }
 
@@ -154,8 +152,6 @@
     walk.hidden = !mobileLayout;
     otherActions.hidden = !mobileLayout;
     queue.querySelector('.featured-fit').hidden = !mobileLayout;
-    verification.hidden = revenueText.hidden = mobileLayout;
-    revenueSource.hidden = !mobileLayout;
     if (workbook.open) workbookResized = true;
     syncNav();
     exhibits.forEach(({section, slot, marker}) => {
@@ -205,8 +201,7 @@
     if (!workbookResized) return;
     workbookResized = false;
     if (mobileLayout) revenueSource.closest('.walk-extra').open = true;
-    const trigger = mobileLayout ? revenueSource : verification.querySelector('.citation button');
-    trigger.focus();
+    revenueSource.focus();
   });
   layout();
 })();

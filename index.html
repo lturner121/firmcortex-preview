@@ -1295,8 +1295,8 @@ h2 .soft { color:inherit; }
 <link rel="stylesheet" href="investment-exhibits.css?v=6">
 <link rel="stylesheet" href="evaluation-exhibit.css?v=2">
 <link rel="stylesheet" href="value-creation-exhibit.css?v=renewal-desk">
-<link rel="stylesheet" href="mobile-stages.css?v=corvel-source" media="(max-width:700px)">
-<link rel="stylesheet" href="evidence.css?v=b743ee4cf6">
+<link rel="stylesheet" href="mobile-stages.css?v=0766a18f9f" media="(max-width:700px)">
+<link rel="stylesheet" href="evidence.css?v=f35b2df325">
 <style>
 #heroR {
   --hero-sourcing: var(--s0);
@@ -1705,7 +1705,7 @@ h2 .soft { color:inherit; }
         <div class="diligence-memo">
           <p class="memo-title"><b>IC Synthesis</b><span>Halden Fleet Systems, draft</span></p>
           <p class="memo-heading">Executive summary</p>
-          <p>Fleet maintenance software for commercial operators. FY26 revenue <span id="halden-revenue-text">$51.0M</span><button id="halden-revenue-source" hidden type="button" data-excerpt="halden-excerpt" aria-haspopup="dialog" aria-controls="halden-excerpt" aria-label="View the workbook source for Halden’s $51.0M FY26 revenue">$51.0M</button>, EBITDA $16.2M.</p>
+          <p>Fleet maintenance software for commercial operators. FY26 revenue <button id="halden-revenue-source" type="button" data-excerpt="halden-excerpt" aria-haspopup="dialog" aria-controls="halden-excerpt" aria-label="View source for Halden Fleet Systems’ FY26 revenue of $51.0M">$51.0M <span class="source-cue">(<span>View source</span>)</span></button>, EBITDA&nbsp;$16.2M.</p>
           <p class="memo-heading">Financial analysis</p>
           <p>Revenue growth 18.5%, EBITDA margin 31.8%.</p>
           <p class="memo-heading">Market &amp; competition</p>
@@ -1869,25 +1869,6 @@ h2 .soft { color:inherit; }
           </div>
         </li>
       </ol>
-    </div>
-  </div>
-</section>
-
-<section class="sec s8" id="verification" aria-labelledby="h8">
-  <div class="wrap">
-    <div class="verify-heading">
-    <h2 id="h8">Trace a reported figure to its source.</h2>
-    </div>
-    <div class="src2">
-      <figure class="chg9">
-        <img class="crop" src="assets/asset-09.png?v=fleet-systems" width="470" height="323" alt="Halden Fleet Systems reported FY26 revenue of $51.0M and EBITDA of $16.2M.">
-        <button type="button" class="halden-feed-source" data-excerpt="halden-excerpt" aria-haspopup="dialog" aria-label="View source for Halden Fleet Systems’ FY26 revenue"></button>
-      </figure>
-      <img class="link9" src="assets/verification-connector.svg" width="80" height="20" alt="" aria-hidden="true">
-      <figure class="src9">
-        <div class="fig9"><span class="lab9">Halden Fleet Systems, FY26 revenue</span><b>$51.0M</b></div>
-        <figcaption class="row9 citation"><button type="button" data-excerpt="halden-excerpt" aria-haspopup="dialog"><span>View source</span>Halden Fleet Systems FY26 Financials.xlsx, P&amp;L sheet, cell D14.</button></figcaption>
-      </figure>
     </div>
   </div>
 </section>
@@ -2229,6 +2210,6 @@ document.querySelectorAll('button[data-excerpt]').forEach(button => {
   button.addEventListener('click', () => excerpt.showModal());
 });
 </script>
-<script src="mobile-stages.js?v=ab84a1d928"></script>
+<script src="mobile-stages.js?v=6528528e7d"></script>
 </body>
 </html>
