@@ -678,8 +678,6 @@ html.mobile-stages-ready {
   to { opacity: 1; transform: none; }
 }
 
-.fc-walk #halden-revenue-source::after { content:""; position:absolute; inset:-10px 0; }
-
 html.mobile-stages-ready #halden-excerpt .source-cited-value {
   position: relative;
 }

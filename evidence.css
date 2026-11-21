@@ -97,26 +97,43 @@
   @keyframes flag-connector { 35% { stroke:#a03532; fill:#a03532; stroke-width:1.8px; } }
 }
 
+.diligence-memo .summary-company { text-wrap:balance; }
+.diligence-memo .summary-figures { margin-top:4px; }
+.summary-figures > span { white-space:nowrap; }
+.diligence-memo .memo-citation { display:flex; margin:6px 0 0; }
 #halden-revenue-source {
-  position:relative;
+  display:inline-flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  align-content:center;
+  gap:2px 10px;
+  max-width:100%;
   padding:0;
   border:0;
   border-radius:2px;
   background:transparent;
-  color:inherit;
-  font:inherit;
-  vertical-align:baseline;
-  white-space:nowrap;
+  color:#243348;
+  font:400 14px/20px Inter,Arial,sans-serif;
+  white-space:normal;
+  text-align:left;
   cursor:pointer;
 }
-#halden-revenue-source .source-cue { color:#165a9a; font-size:.875em; font-weight:550; }
-#halden-revenue-source .source-cue span { text-decoration:underline; text-underline-offset:.16em; }
-#halden-revenue-source:hover .source-cue span { text-decoration-thickness:2px; }
+.memo-citation .citation-document {
+  color:#165a9a;
+  font-weight:500;
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-underline-offset:3px;
+}
+#halden-revenue-source:hover .citation-document { text-decoration-thickness:2px; }
 #halden-revenue-source:focus-visible { outline:2px solid #165a9a; outline-offset:2px; }
 
 #contact #form-note { margin:0; padding:0 0 10px; background:none; border:0; border-bottom:1px solid #dce0e7; border-radius:0; color:#382330; text-align:left; }
 
 @media (max-width:700px) {
+  .diligence-memo .memo-citation { margin-top:2px; }
+  #halden-revenue-source { min-height:44px; column-gap:.45em; letter-spacing:-.014em; }
+  #evaluation .diligence-memo .memo-citation + .memo-heading { margin-top:6px; }
   .fc-walk .wr-queue .sourcing-prospects { list-style:none; margin:0; padding:0 var(--pad); }
   .wr-queue .sourcing-prospects li + li { border-top:1px solid #d5d9e2; }
   .wr-queue summary {
