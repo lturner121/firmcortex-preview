@@ -14,10 +14,6 @@
   const queue = document.querySelector('.sourcing-prospects');
   const queueRows = [...document.querySelectorAll('.queue-sheet [data-fit]')];
   const comparison = document.getElementById('platform');
-  const desktopTitle = comparison.querySelector('h2');
-  const mobileTitle = document.createElement('h3');
-  mobileTitle.id = desktopTitle.id;
-  mobileTitle.textContent = desktopTitle.textContent;
 
   // Move the actual exhibits, including their existing controls and listeners.
   function remember(section, slot) {
@@ -69,7 +65,7 @@
   function syncNav() {
     platformLink.hidden = !compactNav.matches;
     platformToggle.hidden = compactNav.matches;
-    platformLink.hash = phone.matches ? 'investment-stages' : 'platform';
+    platformLink.hash = phone.matches ? walk.id : steps[0].dataset.detail;
     for (const link of nav.querySelectorAll('a')) {
       const step = steps.find(item => item.dataset.detail === link.dataset.section);
       link.hash = phone.matches ? step.querySelector('.walk-title').id : link.dataset.section;
@@ -123,8 +119,8 @@
     if (row) {
       target = compactQueue.matches ? document.getElementById(row.dataset.fit) : row;
     } else if (!mobileLayout && walk.contains(target)) {
-      const step = target.closest('.walk-step');
-      target = step ? document.getElementById(step.dataset.detail) : comparison;
+      const step = target.closest('.walk-step') || steps[0];
+      target = document.getElementById(step.dataset.detail);
     }
     if (mobileLayout && sourceLink) target = revenueSource;
     for (let parent = target.parentElement; parent; parent = parent.parentElement) {
@@ -167,7 +163,6 @@
       else marker.after(section);
     });
     if (mobileLayout) {
-      desktopTitle.replaceWith(mobileTitle);
       headline.textContent = 'One system for the full investment life cycle.';
       introduction.textContent = 'See which prospects, deals and portfolio companies need your attention this week.';
       const [before, after] = renewalText.split('two-person');
@@ -178,7 +173,6 @@
         renewalTitle.replaceChildren(before, compound, after);
       }
     } else {
-      mobileTitle.replaceWith(desktopTitle);
       headline.textContent = desktopHeadline;
       introduction.textContent = desktopIntro;
       renewalTitle.textContent = renewalText;

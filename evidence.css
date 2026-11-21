@@ -44,8 +44,54 @@
 .basis-table td { white-space:nowrap; }
 .basis-table tr:last-child :is(td,th) { font-weight:650; border-bottom:0; }
 .basis-table:focus-visible { outline:2px solid #1870cb; outline-offset:3px; }
-#platform .check-basis { display:block; width:fit-content; margin:14px 0 0 auto; color:#fff; font:550 15px/1.5 Inter,Arial,sans-serif; text-underline-offset:3px; }
-.check-basis span { margin-left:4px; }
+/* Group the desktop comparison with the diligence memo. */
+@media (min-width:701px) {
+  #sourcing {
+    margin-top:-32px;
+    border-radius:32px 32px 0 0;
+  }
+  #evaluation > #platform {
+    max-width:1200px;
+    margin:clamp(40px, 4vw, 60px) auto 0;
+    padding:32px 0 0;
+    border-top:1px solid #d9dce2;
+    border-radius:0;
+  }
+  #evaluation > #platform .wrap { display:block; max-width:none; padding:0; }
+  #evaluation > #platform .head {
+    display:grid;
+    grid-template-columns:minmax(0, 1.8fr) minmax(220px, 1fr);
+    align-items:end;
+    gap:40px;
+    max-width:none;
+    margin:0;
+    text-align:left;
+  }
+  #evaluation > #platform h3 {
+    max-width:33ch;
+    margin:0;
+    color:#111827;
+    font:600 clamp(27px, 2.45vw, 36px)/1.12 Inter, Arial, sans-serif;
+    letter-spacing:-.04em;
+    text-wrap:balance;
+  }
+  #evaluation > #platform .head .body {
+    max-width:37ch;
+    margin:0;
+    color:#273344;
+    font:400 17px/1.5 Inter, Arial, sans-serif;
+  }
+  #evaluation > #platform .k2 {
+    margin-top:24px;
+    padding:30px clamp(22px, 3.5vw, 52px) 34px;
+    border-radius:22px;
+  }
+  #halden-basis { scroll-margin-top:clamp(180px, 32vh, 330px); }
+}
+@media (min-width:701px) and (max-width:1050px) {
+  #evaluation > #platform { margin-inline:var(--pad); }
+  #evaluation > #platform .head { gap:24px; }
+}
 @media (min-width:1200px) and (prefers-reduced-motion:no-preference) {
   .show-financial-flag .diligence-connectors [data-to="m-fin"] { animation:flag-connector .85s ease-out 1; }
   @keyframes flag-connector { 35% { stroke:#a03532; fill:#a03532; stroke-width:1.8px; } }
@@ -118,7 +164,7 @@
   }
   .walk-comparison > summary::after, .other-actions summary::after { content:""; width:6px; height:6px; flex:none; border:solid currentColor; border-width:0 1.5px 1.5px 0; transform:translateY(-2px) rotate(45deg); }
   .walk-comparison[open] > summary::after, .other-actions[open] summary::after { transform:translateY(2px) rotate(225deg); }
-  .fc-walk #platform .check-basis, .fc-walk #platform .head, .fc-walk #sourcing .head,
+  .fc-walk #platform .head, .fc-walk #sourcing .head,
   .fc-walk #sourcing .q4, .fc-walk .evaluation-intro, .fc-walk #value-creation.vc-bridge .vc-intro { display:none; }
   .fc-walk #platform .k2 { margin:0; }
   .fc-walk #sourcing, .fc-walk #evaluation, .fc-walk #value-creation {
