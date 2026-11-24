@@ -44,8 +44,11 @@
 .basis-table td { white-space:nowrap; }
 .basis-table tr:last-child :is(td,th) { font-weight:650; border-bottom:0; }
 .basis-table:focus-visible { outline:2px solid #1870cb; outline-offset:3px; }
-/* Group the desktop comparison with the diligence memo. */
+/* Group the desktop comparison with the diligence memo and the following portfolio update. */
 @media (min-width:701px) {
+  .phone-copy { display:none; }
+  #evaluation { padding-bottom:0; }
+  #monitoring.sec { padding-top:56px; }
   #sourcing {
     margin-top:-32px;
     border-radius:32px 32px 0 0;
@@ -59,10 +62,7 @@
   }
   #evaluation > #platform .wrap { display:block; max-width:none; padding:0; }
   #evaluation > #platform .head {
-    display:grid;
-    grid-template-columns:minmax(0, 1.8fr) minmax(220px, 1fr);
-    align-items:end;
-    gap:40px;
+    display:block;
     max-width:none;
     margin:0;
     text-align:left;
@@ -75,12 +75,6 @@
     letter-spacing:-.04em;
     text-wrap:balance;
   }
-  #evaluation > #platform .head .body {
-    max-width:37ch;
-    margin:0;
-    color:#273344;
-    font:400 17px/1.5 Inter, Arial, sans-serif;
-  }
   #evaluation > #platform .k2 {
     margin-top:24px;
     padding:30px clamp(22px, 3.5vw, 52px) 34px;
@@ -90,7 +84,6 @@
 }
 @media (min-width:701px) and (max-width:1050px) {
   #evaluation > #platform { margin-inline:var(--pad); }
-  #evaluation > #platform .head { gap:24px; }
 }
 @media (min-width:1200px) and (prefers-reduced-motion:no-preference) {
   .show-financial-flag .diligence-connectors [data-to="m-fin"] { animation:flag-connector .85s ease-out 1; }
@@ -131,6 +124,7 @@
 #contact #form-note { margin:0; padding:0 0 10px; background:none; border:0; border-bottom:1px solid #dce0e7; border-radius:0; color:#382330; text-align:left; }
 
 @media (max-width:700px) {
+  .desktop-copy { display:none; }
   .diligence-memo .memo-citation { margin-top:2px; }
   #halden-revenue-source { min-height:44px; column-gap:.45em; letter-spacing:-.014em; }
   #evaluation .diligence-memo .memo-citation + .memo-heading { margin-top:6px; }
